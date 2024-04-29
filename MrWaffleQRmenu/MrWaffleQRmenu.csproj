@@ -67,10 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cake.aspx" />
+    <Content Include="cocktail.aspx" />
+    <Content Include="coffee.aspx" />
+    <Content Include="coldDrink.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
+    <Content Include="food.aspx" />
+    <Content Include="hotDrink.aspx" />
     <Content Include="images\about-img.png" />
     <Content Include="images\client1.jpg" />
     <Content Include="images\client2.jpg" />
@@ -87,21 +93,78 @@
     <Content Include="images\hero-bg.jpg" />
     <Content Include="images\o1.jpg" />
     <Content Include="images\o2.jpg" />
+    <Content Include="index.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
-    <Content Include="menu.aspx" />
+    <Content Include="waffle.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="menu.aspx.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
+    <Compile Include="cake.aspx.cs">
+      <DependentUpon>cake.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="menu.aspx.designer.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
+    <Compile Include="cake.aspx.designer.cs">
+      <DependentUpon>cake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cocktail.aspx.cs">
+      <DependentUpon>cocktail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cocktail.aspx.designer.cs">
+      <DependentUpon>cocktail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coffee.aspx.cs">
+      <DependentUpon>coffee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coffee.aspx.designer.cs">
+      <DependentUpon>coffee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coldDrink.aspx.cs">
+      <DependentUpon>coldDrink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coldDrink.aspx.designer.cs">
+      <DependentUpon>coldDrink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="food.aspx.cs">
+      <DependentUpon>food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="food.aspx.designer.cs">
+      <DependentUpon>food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotDrink.aspx.cs">
+      <DependentUpon>hotDrink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotDrink.aspx.designer.cs">
+      <DependentUpon>hotDrink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.Master.cs">
+      <DependentUpon>index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.Master.designer.cs">
+      <DependentUpon>index.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="waffle.aspx.cs">
+      <DependentUpon>waffle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="waffle.aspx.designer.cs">
+      <DependentUpon>waffle.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css.map" />
@@ -109,6 +172,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="index.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
