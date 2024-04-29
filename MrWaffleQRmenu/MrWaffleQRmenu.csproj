@@ -78,6 +78,8 @@
     <Content Include="food.aspx" />
     <Content Include="hotDrink.aspx" />
     <Content Include="images\about-img.png" />
+    <Content Include="images\category\cake.jpg" />
+    <Content Include="images\category\waffle.jpg" />
     <Content Include="images\client1.jpg" />
     <Content Include="images\client2.jpg" />
     <Content Include="images\f1.png" />

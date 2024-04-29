@@ -8,10 +8,10 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-md-6  ">
-                        <a href="#">
+                        <a href="waffle.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o1.jpg" alt="" />
+                                    <img src="images/category/waffle.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
@@ -22,7 +22,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#">
+                        <a href="hotDrink.aspx">
                             <div class="box">
                                 <div class="img-box">
                                     <img src="images/o2.jpg" alt="" />
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#">
+                        <a href="coldDrink.aspx">
                             <div class="box">
                                 <div class="img-box">
                                     <img src="images/o1.jpg" alt="" />
@@ -50,10 +50,10 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#">
+                        <a href="cake.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o2.jpg" alt="" />
+                                    <img src="images/category/cake.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
@@ -64,7 +64,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#">
+                        <a href="cocktail.aspx">
                             <div class="box">
                                 <div class="img-box">
                                     <img src="images/o1.jpg" alt="" />
@@ -78,7 +78,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#">
+                        <a href="food.aspx">
                             <div class="box">
                                 <div class="img-box">
                                     <img src="images/o2.jpg" alt="" />
@@ -92,7 +92,7 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#">
+                        <a href="coffee.aspx">
                             <div class="box">
                                 <div class="img-box">
                                     <img src="images/o2.jpg" alt="" />
