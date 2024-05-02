@@ -25,7 +25,7 @@
                         <a href="hotDrink.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o2.jpg" alt="" />
+                                    <img src="images/category/hotDrink.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
@@ -39,7 +39,7 @@
                         <a href="coldDrink.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o1.jpg" alt="" />
+                                    <img src="images/category/coldDrink.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
@@ -67,7 +67,7 @@
                         <a href="cocktail.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o1.jpg" alt="" />
+                                    <img src="images/category/coctail.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
@@ -81,7 +81,7 @@
                         <a href="food.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o2.jpg" alt="" />
+                                    <img src="images/category/food.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
@@ -95,7 +95,7 @@
                         <a href="coffee.aspx">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="images/o2.jpg" alt="" />
+                                    <img src="images/category/espresso.jpg" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h1>
