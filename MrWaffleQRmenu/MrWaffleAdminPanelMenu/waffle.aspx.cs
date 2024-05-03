@@ -17,20 +17,23 @@ namespace MrWaffleQRmenu.MrWaffleAdminPanelMenu
             VeriDoldur();
         }
 
-        protected void lv_listProduct_ItemCommand(object sender, ListViewCommandEventArgs e)
-        {
-            int id = Convert.ToInt32(e.CommandArgument);
-            if (e.CommandName == "delete")
-            {
-                dm.DeleteProduct(id);
-            }
-        }
-
         public void VeriDoldur()
         {
             Product p = new Product();
             lv_listProduct.DataSource = dm.ProductList();
             lv_listProduct.DataBind();
+        }
+
+        protected void lv_listProduct_ItemCommand1(object sender, ListViewCommandEventArgs e)
+        {
+            if (e.CommandName == "delete")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                dm.DeleteProduct(id);
+                pnl_basarisiz.Visible = false;
+                pnl_basarili.Visible = true;
+                lbl_mesaj.Text = "Silme İşlemi Başarılı";
+            }
         }
     }
 }
