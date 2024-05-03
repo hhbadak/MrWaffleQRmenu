@@ -1,0 +1,6 @@
+C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MenuAdminPanel\bin\Debug\MenuAdminPanel.dll
+C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MenuAdminPanel\bin\Debug\MenuAdminPanel.pdb
+C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MenuAdminPanel\obj\Debug\MenuAdminPanel.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MenuAdminPanel\obj\Debug\MenuAdminPanel.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MenuAdminPanel\obj\Debug\MenuAdminPanel.dll
+C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MenuAdminPanel\obj\Debug\MenuAdminPanel.pdb
