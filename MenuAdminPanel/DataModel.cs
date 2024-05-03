@@ -85,14 +85,13 @@ namespace MenuAdminPanel
             finally { con.Close(); }
         }
 
-        public List<Product> ProductList(int id)
+        public List<Product> ProductList()
         {
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = @id";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 1";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -102,7 +101,7 @@ namespace MenuAdminPanel
                     p.Name = reader.GetString(1);
                     p.Description = reader.GetString(2);
                     p.Image = reader.GetString(3);
-                    p.Price = reader.GetInt32(4);
+                    p.Price = reader.GetString(4);
                     p.Category = reader.GetString(5);
                     products.Add(p);
                 }
@@ -142,6 +141,54 @@ namespace MenuAdminPanel
             }
         }
 
+        public bool DeleteProduct(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE Products WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+        #region CATEGORY METHOD
+
+        public List<Category> ListCategory()
+        {
+            List<Category> category = new List<Category>();
+            try
+            {
+                cmd.CommandText = "SELECT * FROM Category";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Category c = new Category();
+                    c.ID = reader.GetInt32(0);
+                    c.Name = reader.GetString(1);
+                    category.Add(c);
+                }
+                return category;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         #endregion
     }
 }

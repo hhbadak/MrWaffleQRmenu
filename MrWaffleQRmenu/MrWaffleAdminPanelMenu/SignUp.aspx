@@ -36,17 +36,20 @@
 
                             <div class="card">
                                 <div class="card-body">
+                                    <asp:Panel ID="pnl_hata" runat="server" CssClass="messageBox" Visible="false">
+                                        <asp:Label ID="lbl_hata" runat="server">Deneme Mesaj İçeriği</asp:Label>
+                                    </asp:Panel>
                                     <div class="m-sm-4">
                                         <div class="mb-3">
                                             <label class="form-label">Soyadınızı Giriniz</label>
-                                            <input class="form-control form-control-lg" type="text" name="name" placeholder="Soyadınız" />
+                                            <asp:TextBox ID="tb_surname" runat="server" CssClass="form-control form-control-lg" placeholder="Soyadınız"></asp:TextBox>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Şifrenizi Giriniz</label>
-                                            <input class="form-control form-control-lg" type="password" name="password" placeholder="Şifreniz" />
+                                            <asp:TextBox ID="tb_password" runat="server" CssClass="form-control form-control-lg" placeholder="Şifreniz" TextMode="Password"></asp:TextBox>
                                         </div>
                                         <div class="text-center mt-3">
-                                            <a href="index.html" class="btn btn-lg btn-primary">Giriş Yap</a>
+                                            <asp:LinkButton ID="lbtn_login" runat="server" Text="Giriş Yap" CssClass="btn btn-lg btn-primary" OnClick="lbtn_login_Click"> </asp:LinkButton>
                                         </div>
                                     </div>
                                 </div>

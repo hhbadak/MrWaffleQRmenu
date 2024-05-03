@@ -88,7 +88,7 @@
                                 Yeni bir ürün eklemek için altta yer alan linke tıklayınız.
                             </div>
                             <div class="d-grid">
-                                <a href="upgrade-to-pro.html" class="btn btn-primary">Ürün Eklemek için TIKLAYIN!</a>
+                                <a href="createProduct.aspx" class="btn btn-primary">Ürün Eklemek için TIKLAYIN!</a>
                             </div>
                         </div>
                     </div>

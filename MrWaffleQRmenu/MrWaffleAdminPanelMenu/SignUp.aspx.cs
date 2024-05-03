@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MenuAdminPanel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,34 @@ namespace MrWaffleQRmenu.MrWaffleAdminPanelMenu
 {
     public partial class SignUp : System.Web.UI.Page
     {
+        DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void lbtn_login_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tb_surname.Text) && !string.IsNullOrEmpty(tb_password.Text))
+            {
+                Admin y = dm.AdminLogin(tb_surname.Text, tb_password.Text);
+                if (y != null)
+                {
+                    Session["yonetici"] = y;
+                    Response.Redirect("../MrWaffleAdminPanelMenu/admin.aspx");
+                    
+                }
+                else
+                {
+                    pnl_hata.Visible = true;
+                    lbl_hata.Text = "Kullanıcı Bulunamadı";
+                }
+            }
+            else
+            {
+                pnl_hata.Visible = true;
+                lbl_hata.Text = "Kullanıcı Adı ve Şifre Boş olamaz";
+            }
         }
     }
 }

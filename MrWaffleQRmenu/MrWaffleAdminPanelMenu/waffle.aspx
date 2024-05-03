@@ -2,5 +2,39 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+      <div>
+        <asp:ListView ID="lv_listProduct" runat="server" OnItemCommand="lv_listProduct_ItemCommand">
+            <LayoutTemplate>
+                <table class="tablo" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Fotoğraf</th>
+                            <th>ID</th>
+                            <th>Adı</th>
+                            <th>Açıklaması</th>
+                            <th>Fiyatı</th>
+                            <th>Kategorisi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
+                    </tbody>
+                </table>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <tr>
+                     <td><img src="../MrWaffleAdminPanelMenu/img/Product/<%# Eval("Image") %>" width="50" /></td>
+                    <td><%# Eval("ID") %></td>
+                    <td><%# Eval("Name") %></td>
+                    <td><%# Eval("Description") %></td>
+                    <td><%# Eval("Price") %></td>
+                    <td><%# Eval("Category") %></td>
+                    <td>
+                        <a href='../MrWaffleAdminPanelMenu/menu.aspx?mid=<%# Eval("ID") %>' class="duzenle">Düzenle</a>
+                        <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("ID") %>' CommandName="delete">Sil</asp:LinkButton>
+                    </td>
+                </tr>
+            </ItemTemplate>
+        </asp:ListView>
+    </div>
 </asp:Content>

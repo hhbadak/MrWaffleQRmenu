@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MenuAdminPanel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,27 @@ namespace MrWaffleQRmenu.MrWaffleAdminPanelMenu
 {
     public partial class waffle : System.Web.UI.Page
     {
+        DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
+          
+            VeriDoldur();
+        }
 
+        protected void lv_listProduct_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            int id = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "delete")
+            {
+                dm.DeleteProduct(id);
+            }
+        }
+
+        public void VeriDoldur()
+        {
+            Product p = new Product();
+            lv_listProduct.DataSource = dm.ProductList();
+            lv_listProduct.DataBind();
         }
     }
 }

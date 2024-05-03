@@ -120,6 +120,7 @@
     <Content Include="MrWaffleAdminPanelMenu\img\photos\unsplash-3.jpg" />
     <Content Include="MrWaffleAdminPanelMenu\js\app.js" />
     <Content Include="MrWaffleAdminPanelMenu\js\app.js.LICENSE.txt" />
+    <Content Include="MrWaffleAdminPanelMenu\menu.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\SignUp.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\waffle.aspx" />
     <Content Include="waffle.aspx" />
@@ -203,6 +204,13 @@
     <Compile Include="MrWaffleAdminPanelMenu\createProduct.aspx.designer.cs">
       <DependentUpon>createProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MrWaffleAdminPanelMenu\MrWaffleAdmin.Master.cs">
       <DependentUpon>MrWaffleAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,6 +262,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\cake\" />
+    <Folder Include="MrWaffleAdminPanelMenu\img\product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MenuAdminPanel\MenuAdminPanel.csproj">
+      <Project>{2507f566-2b3f-4f88-a622-eb72f345adec}</Project>
+      <Name>MenuAdminPanel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
