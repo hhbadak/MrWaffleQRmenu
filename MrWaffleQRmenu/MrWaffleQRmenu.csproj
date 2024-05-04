@@ -75,9 +75,11 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
+    <Content Include="default.aspx" />
     <Content Include="food.aspx" />
     <Content Include="hotDrink.aspx" />
     <Content Include="images\about-img.png" />
+    <Content Include="images\banner.png" />
     <Content Include="images\category\cake.jpg" />
     <Content Include="images\category\coctail.jpg" />
     <Content Include="images\category\coldDrink.jpg" />
@@ -100,14 +102,20 @@
     <Content Include="images\hero-bg.jpg" />
     <Content Include="images\o1.jpg" />
     <Content Include="images\o2.jpg" />
-    <Content Include="index.aspx" />
+    <Content Include="images\websiteico.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="menu.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\admin.aspx" />
+    <Content Include="MrWaffleAdminPanelMenu\cake.aspx" />
+    <Content Include="MrWaffleAdminPanelMenu\coctail.aspx" />
+    <Content Include="MrWaffleAdminPanelMenu\coffee.aspx" />
+    <Content Include="MrWaffleAdminPanelMenu\coldDrink.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\createProduct.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\css\app.css" />
+    <Content Include="MrWaffleAdminPanelMenu\food.aspx" />
+    <Content Include="MrWaffleAdminPanelMenu\hotDrink.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\img\avatars\avatar-2.jpg" />
     <Content Include="MrWaffleAdminPanelMenu\img\avatars\avatar-3.jpg" />
     <Content Include="MrWaffleAdminPanelMenu\img\avatars\avatar-4.jpg" />
@@ -118,10 +126,11 @@
     <Content Include="MrWaffleAdminPanelMenu\img\photos\unsplash-1.jpg" />
     <Content Include="MrWaffleAdminPanelMenu\img\photos\unsplash-2.jpg" />
     <Content Include="MrWaffleAdminPanelMenu\img\photos\unsplash-3.jpg" />
+    <Content Include="MrWaffleAdminPanelMenu\img\product\none.png" />
     <Content Include="MrWaffleAdminPanelMenu\js\app.js" />
     <Content Include="MrWaffleAdminPanelMenu\js\app.js.LICENSE.txt" />
-    <Content Include="MrWaffleAdminPanelMenu\menu.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\SignUp.aspx" />
+    <Content Include="MrWaffleAdminPanelMenu\updateProduct.aspx" />
     <Content Include="MrWaffleAdminPanelMenu\waffle.aspx" />
     <Content Include="waffle.aspx" />
     <Content Include="Web.config" />
@@ -155,6 +164,13 @@
     <Compile Include="coldDrink.aspx.designer.cs">
       <DependentUpon>coldDrink.aspx</DependentUpon>
     </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="food.aspx.cs">
       <DependentUpon>food.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,13 +184,6 @@
     </Compile>
     <Compile Include="hotDrink.aspx.designer.cs">
       <DependentUpon>hotDrink.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.Master.cs">
       <DependentUpon>index.Master</DependentUpon>
@@ -197,6 +206,34 @@
     <Compile Include="MrWaffleAdminPanelMenu\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\cake.aspx.cs">
+      <DependentUpon>cake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\cake.aspx.designer.cs">
+      <DependentUpon>cake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\coctail.aspx.cs">
+      <DependentUpon>coctail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\coctail.aspx.designer.cs">
+      <DependentUpon>coctail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\coffee.aspx.cs">
+      <DependentUpon>coffee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\coffee.aspx.designer.cs">
+      <DependentUpon>coffee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\coldDrink.aspx.cs">
+      <DependentUpon>coldDrink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\coldDrink.aspx.designer.cs">
+      <DependentUpon>coldDrink.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MrWaffleAdminPanelMenu\createProduct.aspx.cs">
       <DependentUpon>createProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,12 +241,19 @@
     <Compile Include="MrWaffleAdminPanelMenu\createProduct.aspx.designer.cs">
       <DependentUpon>createProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MrWaffleAdminPanelMenu\menu.aspx.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
+    <Compile Include="MrWaffleAdminPanelMenu\food.aspx.cs">
+      <DependentUpon>food.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MrWaffleAdminPanelMenu\menu.aspx.designer.cs">
-      <DependentUpon>menu.aspx</DependentUpon>
+    <Compile Include="MrWaffleAdminPanelMenu\food.aspx.designer.cs">
+      <DependentUpon>food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\hotDrink.aspx.cs">
+      <DependentUpon>hotDrink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\hotDrink.aspx.designer.cs">
+      <DependentUpon>hotDrink.aspx</DependentUpon>
     </Compile>
     <Compile Include="MrWaffleAdminPanelMenu\MrWaffleAdmin.Master.cs">
       <DependentUpon>MrWaffleAdmin.Master</DependentUpon>
@@ -224,6 +268,13 @@
     </Compile>
     <Compile Include="MrWaffleAdminPanelMenu\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\updateProduct.aspx.cs">
+      <DependentUpon>updateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MrWaffleAdminPanelMenu\updateProduct.aspx.designer.cs">
+      <DependentUpon>updateProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="MrWaffleAdminPanelMenu\waffle.aspx.cs">
       <DependentUpon>waffle.aspx</DependentUpon>
@@ -262,7 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\cake\" />
-    <Folder Include="MrWaffleAdminPanelMenu\img\product\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MenuAdminPanel\MenuAdminPanel.csproj">

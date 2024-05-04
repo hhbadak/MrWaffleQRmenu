@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- food section -->
+      <!-- food section -->
 
     <section class="food_section layout_padding-bottom">
         <div class="container">
@@ -13,23 +13,23 @@
             </div>
             <div class="filters-content">
                 <div class="row grid">
-                    <asp:Repeater ID="rp_fair" runat="server">
+                    <asp:Repeater ID="rp_food" runat="server">
                         <ItemTemplate>
                             <div class="col-sm-6 col-lg-4">
                                 <div class="box">
                                     <div>
 
                                         <div class="img-box">
-                                            <img loading="lazy" src='images/cake/<%# Eval("image") %>' alt='<%# Eval("title") %>' />
+                                            <img loading="lazy" src='../MrWaffleAdminPanelMenu/img/product/<%# Eval("image") %>' alt='<%# Eval("name") %>' />
                                         </div>
                                         <div class="detail-box">
-                                            <h5>Delicious Pizza
+                                            <h5><%# Eval("Name") %>
                                             </h5>
                                             <p>
-                                                Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                                                <%#Eval("Description") %>
                                             </p>
                                             <div class="options">
-                                                <h6>$20
+                                                <h6><%# Eval("Price") %>
                                                 </h6>
                                             </div>
                                         </div>

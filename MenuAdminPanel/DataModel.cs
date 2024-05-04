@@ -85,7 +85,7 @@ namespace MenuAdminPanel
             finally { con.Close(); }
         }
 
-        public List<Product> ProductList()
+        public List<Product> ProductListWaffle()
         {
             List<Product> products = new List<Product>();
             try
@@ -114,17 +114,193 @@ namespace MenuAdminPanel
             finally { con.Close(); }
         }
 
+        public List<Product> ProductListHotDrink()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 2";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListColdDrink()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 3";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListCake()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 4";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListCoctail()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 5";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListFood()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 6";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListCoffee()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 7";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+
         public bool UpdateProduct(Product pro)
         {
             try
             {
-                cmd.CommandText = "UPDATE Products SET Name = @name, Description=@desc, Image=@image, Price=@price, CategoryID = CategoryID WHERE ID=@id";
+                cmd.CommandText = "UPDATE Products SET Name = @name, Description=@desc, Image=@image, Price=@price, CategoryID = @catid WHERE ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", pro.ID);
-                cmd.Parameters.AddWithValue("@baslik", pro.Name);
-                cmd.Parameters.AddWithValue("@kategori_ID", pro.Description);
-                cmd.Parameters.AddWithValue("@ozet", pro.Image);
-                cmd.Parameters.AddWithValue("@icerik", pro.Price);
+                cmd.Parameters.AddWithValue("@name", pro.Name);
+                cmd.Parameters.AddWithValue("@desc", pro.Description);
+                cmd.Parameters.AddWithValue("@image", pro.Image);
+                cmd.Parameters.AddWithValue("@price", pro.Price);
+                cmd.Parameters.AddWithValue("@catid", pro.CategoryID);
 
                 con.Open();
 
@@ -155,6 +331,39 @@ namespace MenuAdminPanel
             catch
             {
                 return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public Product GetProduct(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, p.CategoryID, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                Product p = new Product();
+                while (reader.Read())
+                {
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.CategoryID = reader.GetInt32(5);
+                    p.Category = reader.GetString(6);
+                }
+                return p;
+            }
+            catch
+            {
+                return null;
             }
             finally
             {

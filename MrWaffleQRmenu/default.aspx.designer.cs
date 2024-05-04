@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MrWaffleQRmenu.MrWaffleAdminPanelMenu
+namespace MrWaffleQRmenu
 {
 
 
-    public partial class menu
+    public partial class _default
     {
     }
 }

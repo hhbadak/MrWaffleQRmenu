@@ -20,7 +20,7 @@ namespace MrWaffleQRmenu.MrWaffleAdminPanelMenu
         public void VeriDoldur()
         {
             Product p = new Product();
-            lv_listProduct.DataSource = dm.ProductList();
+            lv_listProduct.DataSource = dm.ProductListWaffle();
             lv_listProduct.DataBind();
         }
 

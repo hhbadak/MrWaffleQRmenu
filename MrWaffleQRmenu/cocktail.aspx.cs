@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MenuAdminPanel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace MrWaffleQRmenu
 {
     public partial class cocktail : System.Web.UI.Page
     {
+        DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            rp_food.DataSource = dm.ProductListCoctail();
+            rp_food.DataBind();
         }
     }
 }

@@ -36,45 +36,45 @@
                         <li class="sidebar-header">Ürün Kategorileri
                         </li>
 
-                        <li class="sidebar-item active">
-                            <a class="sidebar-link" href="index.html">
+                        <li id="waffle" class="sidebar-item active">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/waffle.aspx">
                                 <span class="align-middle">Waffle</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="pages-profile.html">
+                        <li id="hotDrink" class="sidebar-item">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/hotDrink.aspx">
                                 <span class="align-middle">Sıcak İçecekler</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="pages-sign-in.html">
+                        <li id="coldDrink" class="sidebar-item">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/coldDrink.aspx">
                                 <span class="align-middle">Soğuk İçecekler</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="pages-sign-up.html">
+                        <li id="cake" class="sidebar-item">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/cake.aspx">
                                 <span class="align-middle">Pastalar</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="pages-blank.html">
+                        <li id="coctail" class="sidebar-item">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/coctail.aspx">
                                 <span class="align-middle">Kokteyl</span>
                             </a>
                         </li>
 
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="ui-buttons.html">
+                        <li id="food" class="sidebar-item">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/food.aspx">
                                 <span class="align-middle">Tost-Menemen</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="ui-forms.html">
+                        <li id="coffee" class="sidebar-item">
+                            <a class="sidebar-link" href="../MrWaffleAdminPanelMenu/coffee.aspx">
                                 <span class="align-middle">Espresso Kahveler</span>
                             </a>
                         </li>
@@ -109,6 +109,27 @@
         </div>
     </form>
     <script src="../MrWaffleAdminPanelMenu/js/app.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mevcut sayfanın URL'sini alır
+            var path = window.location.pathname;
+            // Tüm sidebar linklerini alır
+            var links = document.querySelectorAll('.sidebar-link');
+
+            links.forEach(function (link) {
+                // Linkin href özelliğini kontrol eder
+                if (path.endsWith(link.getAttribute('href'))) {
+                    // Eğer mevcut sayfa ile link eşleşirse, üst elemente (li) 'active' sınıfını ekler
+                    link.parentElement.classList.add('active');
+                } else {
+                    // Diğer tüm linklerden 'active' sınıfını kaldırır
+                    link.parentElement.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

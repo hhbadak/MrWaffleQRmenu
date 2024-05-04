@@ -177,3 +177,5 @@ C:\Users\HsnHs\OneDrive\Belgeler\GitHub\MrWaffleQRmenu\MrWaffleQRmenu\obj\Debug\
 C:\Users\HsnHs\OneDrive\Belgeler\GitHub\MrWaffleQRmenu\MrWaffleQRmenu\obj\Debug\MrWaffleQRmenu.pdb
 C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MrWaffleQRmenu\bin\MenuAdminPanel.dll
 C:\Users\USER\Documents\GitHub\MrWaffleQRmenu\MrWaffleQRmenu\bin\MenuAdminPanel.pdb
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\MrWaffleQRmenu\MrWaffleQRmenu\bin\MenuAdminPanel.dll
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\MrWaffleQRmenu\MrWaffleQRmenu\bin\MenuAdminPanel.pdb

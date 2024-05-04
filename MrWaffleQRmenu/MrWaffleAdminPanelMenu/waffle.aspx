@@ -40,7 +40,7 @@
                     <td><%# Eval("Price") %></td>
                     <td><%# Eval("Category") %></td>
                     <td>
-                        <a href='../MrWaffleAdminPanelMenu/menu.aspx?mid=<%# Eval("ID") %>' class="duzenle"><i class="align-middle me-2" data-feather="edit"></i></a>
+                        <a href='../MrWaffleAdminPanelMenu/updateProduct.aspx?mid=<%# Eval("ID") %>' class="duzenle"><i class="align-middle me-2" data-feather="edit"></i></a>
                         <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("ID") %>' CommandName="delete"><i class="align-middle me-2" data-feather="trash-2"></i></asp:LinkButton>
                     </td>
                 </tr>
