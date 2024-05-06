@@ -6,6 +6,20 @@
         <div class="offer_container">
             <div class="container ">
                 <div class="row">
+                    <div class="col-md-6">
+                        <a href="cake.aspx">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="images/category/cake.jpg" alt="" />
+                                </div>
+                                <div class="detail-box">
+                                    <h1>
+                                        <span>PASTALAR</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                     <div class="col-md-6  ">
                         <a href="waffle.aspx">
                             <div class="box">
@@ -48,20 +62,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6">
-                        <a href="cake.aspx">
-                            <div class="box">
-                                <div class="img-box">
-                                    <img src="images/category/cake.jpg" alt="" />
-                                </div>
-                                <div class="detail-box">
-                                    <h1>
-                                        <span>PASTALAR</span>
-                                    </h1>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    
                     <div class="col-md-6">
                         <a href="cocktail.aspx">
                             <div class="box">
