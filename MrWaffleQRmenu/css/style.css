@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #0c0c0c;
-  background-color: #ffffff;
-  overflow-x: hidden;
+    font-family: "Inter", sans-serif !important;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 .layout_padding {
@@ -32,7 +32,7 @@ body {
 
 h1,
 h2 {
-  font-family: 'Dancing Script', cursive;
+    font-family: "Inter", sans-serif !important;
 }
 
 .heading_container {
@@ -147,7 +147,7 @@ a:focus {
 }
 
 .navbar-brand {
-  font-family: 'Dancing Script', cursive;
+    font-family: "Inter", sans-serif !important;
 }
 
 .navbar-brand span {
@@ -433,16 +433,16 @@ a:focus {
   transition: all .2s;
 }
 
-.offer_section .box .detail-box h5 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 24px;
-  margin: 0;
-}
+    .offer_section .box .detail-box h5 {
+        font-family: "Inter", sans-serif !important;
+        font-size: 24px;
+        margin: 0;
+    }
 
-.offer_section .box .detail-box h6 {
-  font-family: 'Dancing Script', cursive;
-  margin: 10px 0;
-}
+    .offer_section .box .detail-box h6 {
+        font-family: "Inter", sans-serif !important;
+        margin: 10px 0;
+    }
 
 .offer_section .box .detail-box h6 span {
   font-size: 2.5rem;
@@ -909,12 +909,12 @@ a:focus {
   font-size: 28px;
 }
 
-.footer_section h4,
-.footer_section .footer-logo {
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-family: 'Dancing Script', cursive;
-}
+    .footer_section h4,
+    .footer_section .footer-logo {
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: "Inter", sans-serif !important;
+    }
 
 .footer_section p {
   color: #dbdbdb;
