@@ -68,7 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\lezzet-carki.jpg" />
+    <Content Include="assets\images\product\coctail.jpg" />
+    <Content Include="assets\images\product\espresso.jpg" />
+    <Content Include="assets\images\product\iceMocha.jpg" />
+    <Content Include="assets\images\product\kahvaltiTabagi.jpg" />
     <Content Include="assets\images\product\none.png" />
+    <Content Include="assets\images\product\nutella.png" />
+    <Content Include="assets\images\product\pasta.jpg" />
+    <Content Include="assets\images\product\sahlep.jpg" />
+    <Content Include="assets\images\product\sebastian.jpg" />
     <Content Include="assets\images\websiteico.jpg" />
     <Content Include="home.css" />
     <Content Include="index.aspx" />
