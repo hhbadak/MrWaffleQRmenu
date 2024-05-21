@@ -1,0 +1,182 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="QRMrWaffle.YoneticiPaneli.index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Mr.Waffle Yönetici Paneli ~</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+
+    <link href="../YoneticiPaneli/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="wrapper">
+            <nav id="sidebar" class="sidebar js-sidebar">
+                <div class="sidebar-content js-simplebar">
+                    <a class="sidebar-brand" href="../YoneticiPaneli/index.aspx">
+                        <span class="align-middle">Mr.Waffle</span>
+                    </a>
+
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-header">Ürün Kategorileri
+                        </li>
+
+                        <li id="waffle" class="sidebar-item active">
+                            <a class="sidebar-link" href="../YoneticiPaneli/waffle.aspx">
+                                <span class="align-middle">Waffle</span>
+                            </a>
+                        </li>
+
+                        <li id="hotDrink" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/hotDrink.aspx">
+                                <span class="align-middle">Sıcak İçecekler</span>
+                            </a>
+                        </li>
+
+                        <li id="coldDrink" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/coldDrink.aspx">
+                                <span class="align-middle">Soğuk İçecekler</span>
+                            </a>
+                        </li>
+
+                        <li id="cake" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/cake.aspx">
+                                <span class="align-middle">Pastalar</span>
+                            </a>
+                        </li>
+
+                        <li id="coctail" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/coctail.aspx">
+                                <span class="align-middle">Kokteyl</span>
+                            </a>
+                        </li>
+
+
+                        <li id="food" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/food.aspx">
+                                <span class="align-middle">Tost-Menemen</span>
+                            </a>
+                        </li>
+
+                        <li id="coffee" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/coffee.aspx">
+                                <span class="align-middle">Espresso Kahveler</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <div class="sidebar-cta">
+                        <div class="sidebar-cta-content">
+                            <strong class="d-inline-block mb-2">ÜRÜN EKLEME</strong>
+                            <div class="mb-3 text-sm">
+                                Yeni bir ürün eklemek için altta yer alan linke tıklayınız.
+                            </div>
+                            <div class="d-grid">
+                                <a href="../YoneticiPaneli/productAdd.aspx" class="btn btn-primary">Ürün Eklemek için TIKLAYIN!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-cta">
+                        <div class="d-grid">
+                            <a href="../YoneticiPaneli/updatePopUp.aspx" class="btn btn-primary">Pop-Up</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main">
+                <nav class="navbar navbar-expand navbar-light navbar-bg">
+                    <a class="sidebar-toggle js-sidebar-toggle">
+                        <i class="hamburger align-self-center"></i>
+                    </a>
+
+
+                </nav>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+    <script src="../YoneticiPaneli/js/app.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mevcut sayfanın URL'sini alır
+            var path = window.location.pathname;
+            // Tüm sidebar linklerini alır
+            var links = document.querySelectorAll('.sidebar-link');
+
+            links.forEach(function (link) {
+                // Linkin href özelliğini kontrol eder
+                if (path.endsWith(link.getAttribute('href'))) {
+                    // Eğer mevcut sayfa ile link eşleşirse, üst elemente (li) 'active' sınıfını ekler
+                    link.parentElement.classList.add('active');
+                } else {
+                    // Diğer tüm linklerden 'active' sınıfını kaldırır
+                    link.parentElement.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Pie chart
+            new Chart(document.getElementById("chartjs-dashboard-pie"), {
+                type: "pie",
+                data: {
+                    labels: ["Chrome", "Firefox", "IE"],
+                    datasets: [{
+                        data: [4306, 3801, 1689],
+                        backgroundColor: [
+                            window.theme.primary,
+                            window.theme.warning,
+                            window.theme.danger
+                        ],
+                        borderWidth: 5
+                    }]
+                },
+                options: {
+                    responsive: !window.MSInputMethodContext,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false
+                    },
+                    cutoutPercentage: 75
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+            var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+            document.getElementById("datetimepicker-dashboard").flatpickr({
+                inline: true,
+                prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+                nextArrow: "<span title=\"Next month\">&raquo;</span>",
+                defaultDate: defaultDate
+            });
+        });
+    </script>
+
+</body>
+</html>

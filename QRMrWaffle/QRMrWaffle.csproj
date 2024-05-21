@@ -1,0 +1,302 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE21399F-DDDF-4E6A-BBE1-BDC125368493}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QRMrWaffle</RootNamespace>
+    <AssemblyName>QRMrWaffle</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44372</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\images\lezzet-carki.jpg" />
+    <Content Include="assets\images\popUp\DSC_1879.jpg" />
+    <Content Include="assets\images\product\0968219c-b192-489e-bee1-7c2cecec2608.jpg" />
+    <Content Include="assets\images\product\2ca2eb3a-518c-4d8f-a735-c9e4abdc3109.jpg" />
+    <Content Include="assets\images\product\346f3ec6-7f1a-4e74-a856-1c43b1bc7c1c.jpg" />
+    <Content Include="assets\images\product\3c6d4878-0ec5-4762-95b8-5cc4d2208f93.jpg" />
+    <Content Include="assets\images\product\4b51b3d8-515e-4310-b7c2-ae16c879f198.jpg" />
+    <Content Include="assets\images\product\70c0ee89-b970-4c98-82ad-8259e6df71a4.jpg" />
+    <Content Include="assets\images\product\81660d9b-5e91-4ecb-9da6-e1c702faf83f.jpg" />
+    <Content Include="assets\images\product\90b28625-f28b-4576-8cff-0daa45b04d68.jpg" />
+    <Content Include="assets\images\product\98b8420f-a405-4d6e-abdd-6d1b713d0310.jpg" />
+    <Content Include="assets\images\product\9acd909b-f2a3-4fec-93b2-14bf752418c1.jpg" />
+    <Content Include="assets\images\product\bb907120-bc47-48e8-8e31-a897b11f4ae0.jpg" />
+    <Content Include="assets\images\product\cd235f44-6bbd-4ccb-a8c5-693ce23ff3cb.jpg" />
+    <Content Include="assets\images\product\f489ed42-0f96-4911-9b5e-001d99490c81.jpg" />
+    <Content Include="assets\images\product\fd58c953-1d92-426f-94c1-25a2a52f3fa7.jpg" />
+    <Content Include="assets\images\product\none.png" />
+    <Content Include="home.css" />
+    <Content Include="index.aspx" />
+    <Content Include="menu.aspx" />
+    <Content Include="styles.css" />
+    <Content Include="Web.config" />
+    <Content Include="YoneticiPaneli\cake.aspx" />
+    <Content Include="YoneticiPaneli\coctail.aspx" />
+    <Content Include="YoneticiPaneli\coffee.aspx" />
+    <Content Include="YoneticiPaneli\coldDrink.aspx" />
+    <Content Include="YoneticiPaneli\css\app.css" />
+    <Content Include="YoneticiPaneli\food.aspx" />
+    <Content Include="YoneticiPaneli\hotDrink.aspx" />
+    <Content Include="YoneticiPaneli\img\avatars\avatar-2.jpg" />
+    <Content Include="YoneticiPaneli\img\avatars\avatar-3.jpg" />
+    <Content Include="YoneticiPaneli\img\avatars\avatar-4.jpg" />
+    <Content Include="YoneticiPaneli\img\avatars\avatar-5.jpg" />
+    <Content Include="YoneticiPaneli\img\avatars\avatar.jpg" />
+    <Content Include="YoneticiPaneli\img\icons\icon-48x48.png" />
+    <Content Include="YoneticiPaneli\img\LOGO.jpg" />
+    <Content Include="YoneticiPaneli\img\photos\unsplash-1.jpg" />
+    <Content Include="YoneticiPaneli\img\photos\unsplash-2.jpg" />
+    <Content Include="YoneticiPaneli\img\photos\unsplash-3.jpg" />
+    <Content Include="YoneticiPaneli\img\product31129237-bf6c-4a51-8133-5a1bd95dc9f8.jpg" />
+    <Content Include="YoneticiPaneli\img\product5cf8b92d-e210-403c-907e-3c7396c6e563.jpg" />
+    <Content Include="YoneticiPaneli\img\productffd5e55c-a24a-4451-b15e-95616c8a54c7.jpg" />
+    <Content Include="YoneticiPaneli\img\product\0968219c-b192-489e-bee1-7c2cecec2608.jpg" />
+    <Content Include="YoneticiPaneli\img\product\2ca2eb3a-518c-4d8f-a735-c9e4abdc3109.jpg" />
+    <Content Include="YoneticiPaneli\img\product\346f3ec6-7f1a-4e74-a856-1c43b1bc7c1c.jpg" />
+    <Content Include="YoneticiPaneli\img\product\3c6d4878-0ec5-4762-95b8-5cc4d2208f93.jpg" />
+    <Content Include="YoneticiPaneli\img\product\4b51b3d8-515e-4310-b7c2-ae16c879f198.jpg" />
+    <Content Include="YoneticiPaneli\img\product\70c0ee89-b970-4c98-82ad-8259e6df71a4.jpg" />
+    <Content Include="YoneticiPaneli\img\product\81660d9b-5e91-4ecb-9da6-e1c702faf83f.jpg" />
+    <Content Include="YoneticiPaneli\img\product\90b28625-f28b-4576-8cff-0daa45b04d68.jpg" />
+    <Content Include="YoneticiPaneli\img\product\98b8420f-a405-4d6e-abdd-6d1b713d0310.jpg" />
+    <Content Include="YoneticiPaneli\img\product\9acd909b-f2a3-4fec-93b2-14bf752418c1.jpg" />
+    <Content Include="YoneticiPaneli\img\product\bb907120-bc47-48e8-8e31-a897b11f4ae0.jpg" />
+    <Content Include="YoneticiPaneli\img\product\cd235f44-6bbd-4ccb-a8c5-693ce23ff3cb.jpg" />
+    <Content Include="YoneticiPaneli\img\product\f489ed42-0f96-4911-9b5e-001d99490c81.jpg" />
+    <Content Include="YoneticiPaneli\img\product\fd58c953-1d92-426f-94c1-25a2a52f3fa7.jpg" />
+    <Content Include="YoneticiPaneli\img\product\none.png" />
+    <Content Include="YoneticiPaneli\index.aspx" />
+    <Content Include="YoneticiPaneli\js\app.js" />
+    <Content Include="YoneticiPaneli\js\app.js.LICENSE.txt" />
+    <Content Include="YoneticiPaneli\productAdd.aspx" />
+    <Content Include="YoneticiPaneli\sign.aspx" />
+    <Content Include="YoneticiPaneli\updatePopUp.aspx" />
+    <Content Include="YoneticiPaneli\updateProduct.aspx" />
+    <Content Include="YoneticiPaneli\waffle.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YoneticiPaneli\cake.aspx.cs">
+      <DependentUpon>cake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\cake.aspx.designer.cs">
+      <DependentUpon>cake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\coctail.aspx.cs">
+      <DependentUpon>coctail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\coctail.aspx.designer.cs">
+      <DependentUpon>coctail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\coffee.aspx.cs">
+      <DependentUpon>coffee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\coffee.aspx.designer.cs">
+      <DependentUpon>coffee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\coldDrink.aspx.cs">
+      <DependentUpon>coldDrink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\coldDrink.aspx.designer.cs">
+      <DependentUpon>coldDrink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\food.aspx.cs">
+      <DependentUpon>food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\food.aspx.designer.cs">
+      <DependentUpon>food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\hotDrink.aspx.cs">
+      <DependentUpon>hotDrink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\hotDrink.aspx.designer.cs">
+      <DependentUpon>hotDrink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\index.Master.cs">
+      <DependentUpon>index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\index.Master.designer.cs">
+      <DependentUpon>index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\productAdd.aspx.cs">
+      <DependentUpon>productAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\productAdd.aspx.designer.cs">
+      <DependentUpon>productAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\sign.aspx.cs">
+      <DependentUpon>sign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\sign.aspx.designer.cs">
+      <DependentUpon>sign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\updatePopUp.aspx.cs">
+      <DependentUpon>updatePopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\updatePopUp.aspx.designer.cs">
+      <DependentUpon>updatePopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\updateProduct.aspx.cs">
+      <DependentUpon>updateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\updateProduct.aspx.designer.cs">
+      <DependentUpon>updateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\waffle.aspx.cs">
+      <DependentUpon>waffle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\waffle.aspx.designer.cs">
+      <DependentUpon>waffle.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="YoneticiPaneli\css\app.css.map" />
+    <Content Include="YoneticiPaneli\fonts\.gitkeep" />
+    <Content Include="YoneticiPaneli\js\app.js.map" />
+    <Content Include="YoneticiPaneli\index.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{e5c216c5-65ca-48ca-903b-f6f27737177f}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63260</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44372/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

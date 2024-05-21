@@ -1,0 +1,139 @@
+﻿
+.section-title {
+    scroll-margin-top: 120px; /* Navbar yüksekliğine bağlı olarak ayarlayın */
+}
+
+/* Varsayılan margin ve padding sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar stilleri */
+.navbar {
+    background: linear-gradient(to right, #8A9977, #0A0604);
+    color: #fff;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+    .navbar .logo {
+        margin-right: 20px;
+    }
+
+        .navbar .logo img {
+            height: 30px;
+        }
+
+    .navbar .carousel-container {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .navbar .carousel-item {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+        .navbar .carousel-item a {
+            display: block;
+            background-color: #555;
+            color: #fff;
+            opacity: .8;
+            background-color: #0A0604;
+            padding: 14px 16px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .navbar .carousel-item a:hover {
+                background-color: #777;
+            }
+
+/* Responsive stiller */
+@media (max-width: 768px) {
+    .navbar .logo {
+        margin-right: 0;
+    }
+
+    .navbar .carousel-container {
+        overflow-x: scroll;
+    }
+}
+
+.menu {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .menu-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .menu-item img {
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+    .item-details h3 {
+        margin: 0;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .item-details p {
+        margin: 5px 0;
+    }
+
+.price {
+    color: #888;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Başlıklar için scroll-margin-top ayarı */
+.section-title {
+    scroll-margin-top: 90px; /* Navbar yüksekliğine bağlı olarak ayarlayın */
+}

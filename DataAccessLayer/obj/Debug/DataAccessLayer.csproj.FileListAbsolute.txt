@@ -1,0 +1,12 @@
+C:\Users\HsnHs\source\repos\QRMrWaffle\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\HsnHs\source\repos\QRMrWaffle\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\HsnHs\source\repos\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\HsnHs\source\repos\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\HsnHs\source\repos\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\HsnHs\source\repos\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\USER\Desktop\Waffle amca\QRMrWaffle\QRMrWaffle\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\USER\Desktop\Waffle amca\QRMrWaffle\QRMrWaffle\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\USER\Desktop\Waffle amca\QRMrWaffle\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Waffle amca\QRMrWaffle\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Waffle amca\QRMrWaffle\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\USER\Desktop\Waffle amca\QRMrWaffle\QRMrWaffle\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
