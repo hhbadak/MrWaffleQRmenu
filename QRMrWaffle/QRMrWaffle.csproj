@@ -68,22 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\lezzet-carki.jpg" />
-    <Content Include="assets\images\popUp\DSC_1879.jpg" />
-    <Content Include="assets\images\product\0968219c-b192-489e-bee1-7c2cecec2608.jpg" />
-    <Content Include="assets\images\product\2ca2eb3a-518c-4d8f-a735-c9e4abdc3109.jpg" />
-    <Content Include="assets\images\product\346f3ec6-7f1a-4e74-a856-1c43b1bc7c1c.jpg" />
-    <Content Include="assets\images\product\3c6d4878-0ec5-4762-95b8-5cc4d2208f93.jpg" />
-    <Content Include="assets\images\product\4b51b3d8-515e-4310-b7c2-ae16c879f198.jpg" />
-    <Content Include="assets\images\product\70c0ee89-b970-4c98-82ad-8259e6df71a4.jpg" />
-    <Content Include="assets\images\product\81660d9b-5e91-4ecb-9da6-e1c702faf83f.jpg" />
-    <Content Include="assets\images\product\90b28625-f28b-4576-8cff-0daa45b04d68.jpg" />
-    <Content Include="assets\images\product\98b8420f-a405-4d6e-abdd-6d1b713d0310.jpg" />
-    <Content Include="assets\images\product\9acd909b-f2a3-4fec-93b2-14bf752418c1.jpg" />
-    <Content Include="assets\images\product\bb907120-bc47-48e8-8e31-a897b11f4ae0.jpg" />
-    <Content Include="assets\images\product\cd235f44-6bbd-4ccb-a8c5-693ce23ff3cb.jpg" />
-    <Content Include="assets\images\product\f489ed42-0f96-4911-9b5e-001d99490c81.jpg" />
-    <Content Include="assets\images\product\fd58c953-1d92-426f-94c1-25a2a52f3fa7.jpg" />
     <Content Include="assets\images\product\none.png" />
+    <Content Include="assets\images\websiteico.jpg" />
     <Content Include="home.css" />
     <Content Include="index.aspx" />
     <Content Include="menu.aspx" />
@@ -106,9 +92,6 @@
     <Content Include="YoneticiPaneli\img\photos\unsplash-1.jpg" />
     <Content Include="YoneticiPaneli\img\photos\unsplash-2.jpg" />
     <Content Include="YoneticiPaneli\img\photos\unsplash-3.jpg" />
-    <Content Include="YoneticiPaneli\img\product31129237-bf6c-4a51-8133-5a1bd95dc9f8.jpg" />
-    <Content Include="YoneticiPaneli\img\product5cf8b92d-e210-403c-907e-3c7396c6e563.jpg" />
-    <Content Include="YoneticiPaneli\img\productffd5e55c-a24a-4451-b15e-95616c8a54c7.jpg" />
     <Content Include="YoneticiPaneli\img\product\0968219c-b192-489e-bee1-7c2cecec2608.jpg" />
     <Content Include="YoneticiPaneli\img\product\2ca2eb3a-518c-4d8f-a735-c9e4abdc3109.jpg" />
     <Content Include="YoneticiPaneli\img\product\346f3ec6-7f1a-4e74-a856-1c43b1bc7c1c.jpg" />
@@ -260,7 +243,9 @@
       <Name>DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="assets\images\popUp\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -5,8 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>MrWaffles</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles.css" rel="stylesheet" />
+    <link rel="icon" href="assets/images/websiteico.ico" type="image/ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Eskişehir waffle lezzetini en kaliteli ürünlerimiz ile waffle hazzına ulaşabileceğiniz hizmet sunuyoruz" />
+    <meta name="author" content="HHBadak" />
+    <meta name="author" content="Appsoly" />
+    <meta name="keywords" content="waffle, eskişehir, eskişehir tatlı, eskişehir waffle, espark, MrWaffle" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/websiteico.png" />
+
+    <link rel="canonical" href="https://www.mrwaffle.com.tr/" />
     <style>
         /* Pop-up stilleri */
         .popup-container {
@@ -63,22 +75,22 @@
             font-family: 'Poppins', sans-serif;
         }
     </style>
-<script>
-    // Pop-up kapatma işlemi
-    function closePopup() {
-        var popupContainer = document.getElementById('popup-container');
-        popupContainer.style.display = 'none';
-    }
-
-    // Boşluğa tıklayınca pop-up'ı kapatma işlemi
-    window.addEventListener('click', function (event) {
-        var popupContainer = document.getElementById('popup-container');
-        var popupContent = document.getElementById('popup-content');
-        if (event.target === popupContainer || !popupContent.contains(event.target)) {
+    <script>
+        // Pop-up kapatma işlemi
+        function closePopup() {
+            var popupContainer = document.getElementById('popup-container');
             popupContainer.style.display = 'none';
         }
-    });
-</script>
+
+        // Boşluğa tıklayınca pop-up'ı kapatma işlemi
+        window.addEventListener('click', function (event) {
+            var popupContainer = document.getElementById('popup-container');
+            var popupContent = document.getElementById('popup-content');
+            if (event.target === popupContainer || !popupContent.contains(event.target)) {
+                popupContainer.style.display = 'none';
+            }
+        });
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
