@@ -74,7 +74,14 @@
             text-align: center;
             font-family: 'Poppins', sans-serif;
         }
+
+        .responsive-img {
+            width: 200px; /* Genişliği konteynere uyacak şekilde yapar */
+            height: auto; /* Yüksekliği otomatik olarak ayarlar */
+            object-fit: cover; /* Görüntüyü konteyneri kaplayacak şekilde kırpar */
+        }
     </style>
+
     <script>
         // Pop-up kapatma işlemi
         function closePopup() {
@@ -134,7 +141,7 @@
                 <asp:Repeater ID="rp_best" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="MrWaffle" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="MrWaffle" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -153,7 +160,7 @@
                 <asp:Repeater ID="rp_waffle" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Waffle" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Waffle" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -172,7 +179,7 @@
                 <asp:Repeater ID="rp_cake" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Pastalar" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Pastalar" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -191,7 +198,7 @@
                 <asp:Repeater ID="rp_coffee" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Espress Kahveler" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Espress Kahveler" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -210,7 +217,7 @@
                 <asp:Repeater ID="rp_hot" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Sıcak İçecekler" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Sıcak İçecekler" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -229,7 +236,7 @@
                 <asp:Repeater ID="rp_cold" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Soğuk İçecekler" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Soğuk İçecekler" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -248,7 +255,7 @@
                 <asp:Repeater ID="rp_coctail" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Kokteyl" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Kokteyl" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -267,7 +274,7 @@
                 <asp:Repeater ID="rp_food" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Tost - Menemen" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Tost - Menemen" style="width: 200px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
