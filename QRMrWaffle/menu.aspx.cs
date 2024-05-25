@@ -29,8 +29,6 @@ namespace QRMrWaffle
             rp_coctail.DataBind();
             rp_food.DataSource = dm.ProductListFood();
             rp_food.DataBind();
-            rp_popUp.DataSource = dm.Pop_UpList();
-            rp_popUp.DataBind();
         }
     }
 }

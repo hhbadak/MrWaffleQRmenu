@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/YoneticiPaneli/index.Master" AutoEventWireup="true" CodeBehind="productAdd.aspx.cs" Inherits="QRMrWaffle.YoneticiPaneli.productAdd" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container mt-3">
+     <div class="container mt-3">
         <h1>ÜRÜN EKLEME SAYFASI</h1>
     </div>
     <div class="container mt-5">
@@ -17,7 +16,7 @@
                 </asp:Panel>
                 <div class="card">
                     <label><b>Ürün Kategorisini Seçiniz</b></label>
-                    <asp:DropDownList ID="ddl_category" runat="server" CssClass="form-control" AppendDataBoundItems="true">
+                   <asp:DropDownList ID="ddl_category" runat="server" CssClass="form-control" AppendDataBoundItems="true">
                         <asp:ListItem Text="Seçiniz" Value="0"></asp:ListItem>
                     </asp:DropDownList><br />
                     <label><b>Ürün Adını Giriniz</b></label>
@@ -28,8 +27,8 @@
                     <asp:TextBox ID="tb_price" runat="server" CssClass="form-control" TextMode="Number" Placeholder="FİYAT"></asp:TextBox><br />
                     <label><b>Ürün Resmi</b></label>
                     <asp:FileUpload ID="fu_picture" runat="server"></asp:FileUpload>
-                    <label><b>Çok Satılan mı?</b></label>
-                    <asp:CheckBox ID="cb_best" CssClass="form-control" runat="server" />
+                      <label><b>Çok Satılanlara Eklemek İçin Tik işaretini Tamamlayın</b></label>
+                    <asp:CheckBox ID="cb_best" runat="server" Text="Çok Satılanlar" />
                 </div>
                 <div class="row">
                     <asp:LinkButton ID="lbtn_create" runat="server" Text="EKLE" CssClass="btn btn-primary btn-lg" OnClick="lbtn_create_Click"></asp:LinkButton>

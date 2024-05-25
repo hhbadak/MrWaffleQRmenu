@@ -16,6 +16,5 @@ namespace DataAccessLayer
         public int CategoryID { get; set; }
         public string Category { get; set; }
         public bool BestSeller { get; set; }
-        public bool Statu { get; set; }
     }
 }

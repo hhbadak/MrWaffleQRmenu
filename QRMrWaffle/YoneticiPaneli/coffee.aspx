@@ -11,7 +11,7 @@
             <asp:Label ID="lbl_mesaj" runat="server"></asp:Label>
         </asp:Panel>
 
-        <asp:ListView ID="lv_listProduct" runat="server" DataKeyNames="ID" OnItemCommand="lv_listProduct_ItemCommand">
+        <asp:ListView ID="lv_listProduct" runat="server" OnItemCommand="lv_listProduct_ItemCommand">
             <LayoutTemplate>
                 <table class="table" cellpadding="0" cellspacing="0">
                     <thead>
@@ -33,7 +33,7 @@
             <ItemTemplate>
                 <tr>
                     <td>
-                        <img src="../assets/images/product/<%# Eval("Image") %>" width="50" /></td>
+                        <img src="../YoneticiPaneli/img/Product/<%# Eval("Image") %>" width="50" /></td>
                     <td><%# Eval("ID") %></td>
                     <td><%# Eval("Name") %></td>
                     <td><%# Eval("Description") %></td>

@@ -28,7 +28,9 @@ namespace QRMrWaffle.YoneticiPaneli
             {
                 int id = Convert.ToInt32(e.CommandArgument);
                 dm.DeleteProduct(id);
-                Response.Redirect("~/YoneticiPaneli/cake.aspx");
+                pnl_basarisiz.Visible = false;
+                pnl_basarili.Visible = true;
+                lbl_mesaj.Text = "Silme İşlemi Başarılı";
             }
         }
     }
