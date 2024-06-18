@@ -15,6 +15,12 @@ namespace QRMrWaffle.YoneticiPaneli
         {
             VeriDoldur();
         }
+        public void VeriDoldur()
+        {
+            Product p = new Product();
+            lv_listProduct.DataSource = dm.ProductListRedbull();
+            lv_listProduct.DataBind();
+        }
 
         protected void lv_listProduct_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
@@ -22,16 +28,8 @@ namespace QRMrWaffle.YoneticiPaneli
             {
                 int id = Convert.ToInt32(e.CommandArgument);
                 dm.DeleteProduct(id);
-                pnl_basarisiz.Visible = false;
-                pnl_basarili.Visible = true;
-                lbl_mesaj.Text = "Silme İşlemi Başarılı";
+                Response.Redirect("~/YoneticiPaneli/coctail.aspx");
             }
-        }
-        public void VeriDoldur()
-        {
-            Product p = new Product();
-            lv_listProduct.DataSource = dm.ProductListCoctail();
-            lv_listProduct.DataBind();
         }
     }
 }

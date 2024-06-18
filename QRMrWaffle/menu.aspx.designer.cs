@@ -24,6 +24,15 @@ namespace QRMrWaffle
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// rp_popUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_popUp;
+
+        /// <summary>
         /// rp_best control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,24 @@ namespace QRMrWaffle
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rp_best;
+
+        /// <summary>
+        /// rp_coldSandwich control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_coldSandwich;
+
+        /// <summary>
+        /// rp_food control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_food;
 
         /// <summary>
         /// rp_waffle control.
@@ -51,13 +78,22 @@ namespace QRMrWaffle
         protected global::System.Web.UI.WebControls.Repeater rp_cake;
 
         /// <summary>
-        /// rp_coffee control.
+        /// rp_lemonade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_coffee;
+        protected global::System.Web.UI.WebControls.Repeater rp_lemonade;
+
+        /// <summary>
+        /// rp_redbull control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_redbull;
 
         /// <summary>
         /// rp_hot control.
@@ -76,23 +112,5 @@ namespace QRMrWaffle
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rp_cold;
-
-        /// <summary>
-        /// rp_coctail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_coctail;
-
-        /// <summary>
-        /// rp_food control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_food;
     }
 }

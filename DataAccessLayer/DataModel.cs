@@ -114,12 +114,100 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+
+        public List<Product> ProductListColdSandwich()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 8";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
         public List<Product> ProductListWaffle()
         {
             List<Product> products = new List<Product>();
             try
             {
                 cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 1";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListLemonade()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 9";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.Category = reader.GetString(5);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Product> ProductListRedbull()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 5";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -230,35 +318,6 @@ namespace DataAccessLayer
             finally { con.Close(); }
         }
 
-        public List<Product> ProductListCoctail()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 5";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
-
         public List<Product> ProductListFood()
         {
             List<Product> products = new List<Product>();
@@ -317,7 +376,6 @@ namespace DataAccessLayer
             finally { con.Close(); }
         }
 
-
         public bool UpdateProduct(Product pro)
         {
             try
@@ -372,7 +430,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, p.CategoryID, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.ID = @id";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, p.CategoryID, c.Name, p.BestSellers FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
@@ -428,6 +486,89 @@ namespace DataAccessLayer
                 return null;
             }
             finally { con.Close(); }
+        }
+        #endregion
+
+        #region PopUp METHOD
+        public List<PopUp> Pop_UpList()
+        {
+            List<PopUp> products = new List<PopUp>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Name, Image, Url FROM PopUp";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    PopUp p = new PopUp();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Image = reader.GetString(2);
+                    p.Url = reader.GetString(3);
+                    products.Add(p);
+                }
+                return products;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public PopUp GetPopUp()
+        {
+            try
+            {
+                cmd.CommandText = "SELECT ID, Name, Image, Url FROM PopUp";
+                cmd.Parameters.Clear();
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                PopUp p = new PopUp();
+                while (reader.Read())
+                {
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Image = reader.GetString(2);
+                    p.Url = reader.GetString(3);
+                }
+                return p;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool UpdatePopUp(PopUp pop)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE PopUp SET Name = @name, Image=@image, Url=@url WHERE ID = 1";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@name", pop.Name);
+                cmd.Parameters.AddWithValue("@image", pop.Image);
+                cmd.Parameters.AddWithValue("@url", pop.Url);
+
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         #endregion
     }

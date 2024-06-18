@@ -8,14 +8,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
-    <meta name="author" content="AdminKit">
-    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
+    <meta name="description" content="Eskişehir waffle lezzetini en kaliteli ürünlerimiz ile waffle hazzına ulaşabileceğiniz hizmet sunuyoruz">
+    <meta name="author" content="HHBadak">
+    <meta name="author" content="Appsoly">
+    <meta name="keywords" content="waffle, eskişehir, eskişehir tatlı, eskişehir waffle, espark, MrWaffle">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/websiteico.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <link rel="canonical" href="https://www.mrwaffle.com.tr/" />
 
     <link href="../YoneticiPaneli/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-   <form id="form1" runat="server">
+    <form id="form1" runat="server">
 
         <div class="wrapper">
             <nav id="sidebar" class="sidebar js-sidebar">
@@ -56,13 +56,13 @@
 
                         <li id="cake" class="sidebar-item">
                             <a class="sidebar-link" href="../YoneticiPaneli/cake.aspx">
-                                <span class="align-middle">Pastalar</span>
+                                <span class="align-middle">Tatlılar</span>
                             </a>
                         </li>
 
                         <li id="coctail" class="sidebar-item">
                             <a class="sidebar-link" href="../YoneticiPaneli/coctail.aspx">
-                                <span class="align-middle">Kokteyl</span>
+                                <span class="align-middle">Redbull Kokteyller</span>
                             </a>
                         </li>
 
@@ -73,9 +73,15 @@
                             </a>
                         </li>
 
-                        <li id="coffee" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/coffee.aspx">
-                                <span class="align-middle">Espresso Kahveler</span>
+                        <li id="coldSandwich" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/coldSandwich.aspx">
+                                <span class="align-middle">Soğuk Sandviç</span>
+                            </a>
+                        </li>
+
+                         <li id="lemonade" class="sidebar-item">
+                            <a class="sidebar-link" href="../YoneticiPaneli/lemonade.aspx">
+                                <span class="align-middle">Limonatalar</span>
                             </a>
                         </li>
 
@@ -90,6 +96,11 @@
                             <div class="d-grid">
                                 <a href="../YoneticiPaneli/productAdd.aspx" class="btn btn-primary">Ürün Eklemek için TIKLAYIN!</a>
                             </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-cta">
+                        <div class="d-grid">
+                            <a href="../YoneticiPaneli/updatePopUp.aspx" class="btn btn-primary">Pop-Up</a>
                         </div>
                     </div>
                 </div>

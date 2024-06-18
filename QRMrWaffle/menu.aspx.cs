@@ -19,16 +19,24 @@ namespace QRMrWaffle
             rp_waffle.DataBind();
             rp_cake.DataSource = dm.ProductListCake();
             rp_cake.DataBind();
-            rp_coffee.DataSource = dm.ProductListCoffee();
-            rp_coffee.DataBind();
+            rp_coldSandwich.DataSource = dm.ProductListColdSandwich();
+            rp_coldSandwich.DataBind();
+            rp_lemonade.DataSource = dm.ProductListLemonade();
+            rp_lemonade.DataBind();
+            rp_redbull.DataSource = dm.ProductListRedbull();
+            rp_redbull.DataBind();
+            //rp_coffee.DataSource = dm.ProductListCoffee();
+            //rp_coffee.DataBind();
             rp_hot.DataSource = dm.ProductListHotDrink();
             rp_hot.DataBind();
             rp_cold.DataSource = dm.ProductListColdDrink();
             rp_cold.DataBind();
-            rp_coctail.DataSource = dm.ProductListCoctail();
-            rp_coctail.DataBind();
+            //rp_coctail.DataSource = dm.ProductListCoctail();
+            //rp_coctail.DataBind();
             rp_food.DataSource = dm.ProductListFood();
             rp_food.DataBind();
+            rp_popUp.DataSource = dm.Pop_UpList();
+            rp_popUp.DataBind();
         }
     }
 }

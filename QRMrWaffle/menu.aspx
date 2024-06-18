@@ -5,8 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>MrWaffles</title>
-    <link href="styles.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
 
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="icon" href="assets/images/websiteico.ico" type="image/ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Eskişehir waffle lezzetini en kaliteli ürünlerimiz ile waffle hazzına ulaşabileceğiniz hizmet sunuyoruz" />
+    <meta name="author" content="HHBadak" />
+    <meta name="author" content="Appsoly" />
+    <meta name="keywords" content="waffle, eskişehir, eskişehir tatlı, eskişehir waffle, espark, MrWaffle" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/websiteico.png" />
+
+    <link rel="canonical" href="https://www.mrwaffle.com.tr/" />
     <style>
         /* Pop-up stilleri */
         .popup-container {
@@ -62,7 +74,14 @@
             text-align: center;
             font-family: 'Poppins', sans-serif;
         }
+
+        .responsive-img {
+            width: 200px; /* Genişliği konteynere uyacak şekilde yapar */
+            height: auto; /* Yüksekliği otomatik olarak ayarlar */
+            object-fit: cover; /* Görüntüyü konteyneri kaplayacak şekilde kırpar */
+        }
     </style>
+
     <script>
         // Pop-up kapatma işlemi
         function closePopup() {
@@ -74,11 +93,12 @@
         window.addEventListener('click', function (event) {
             var popupContainer = document.getElementById('popup-container');
             var popupContent = document.getElementById('popup-content');
-            if (event.target === popupContainer) {
+            if (event.target === popupContainer || !popupContent.contains(event.target)) {
                 popupContainer.style.display = 'none';
             }
         });
     </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -86,27 +106,34 @@
         <div id="popup-container" class="popup-container">
             <div id="popup-content" class="popup-content">
                 <h2>Hoş Geldiniz!</h2>
-                <a href="https://www.mrwaffle.com.tr/uye-ol">
-                    <p style="color: blue">Ücretsiz tatlılar kazanabileceğiniz ÇARK SİSTEMİ İÇİN TIKLAYIN!</p>
-                      
-                    <img src="assets/images/lezzet-carki.jpg" style="width:200px"/>
-                    <div class="close-button" onclick="closePopup()">&#x2716;</div>
-                </a>
+                <asp:Repeater ID="rp_popUp" runat="server">
+                    <ItemTemplate>
+                        <a href="<%# Eval("Url") %>">
+                            <p style="color: blue"><%# Eval("Name") %></p>
+                            <img src="assets/images/popUp/<%# Eval("Image") %>" style="width: 200px" />
+
+                        </a>
+                        <div class="close-button" onclick="closePopup()">&#x2716;</div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </div>
         <div class="navbar">
-            <%-- <div class="logo">
-                <img src="logo.png" alt="Logo" />
-            </div>--%>
+            <div class="logo">
+                <img src="assets/images/websiteico.jpg" alt="Logo" />
+            </div>
             <div class="carousel-container">
                 <div class="carousel-item"><a href="#cok-satanlar">ÇOK SATANLAR</a></div>
+                <div class="carousel-item"><a href="#coldSandwich">Soğuk Sandviç</a></div>
+                <div class="carousel-item"><a href="#atistirmalik">TOST-MENEMEN</a></div>
                 <div class="carousel-item"><a href="#waffle">WAFFLE</a></div>
-                <div class="carousel-item"><a href="#pasta">PASTALAR</a></div>
-                <div class="carousel-item"><a href="#kahve">ESPRESSO KAHVELER</a></div>
+                <div class="carousel-item"><a href="#pasta">Tatlılar(El Yapımı)</a></div>
+                <div class="carousel-item"><a href="#lemonade">Limonatalar</a></div>
+                <div class="carousel-item"><a href="#redbull">Redbull Kokteyller</a></div>
+                <%--<div class="carousel-item"><a href="#kahve">ESPRESSO KAHVELER</a></div>--%>
                 <div class="carousel-item"><a href="#sicak">SICAK İÇECEKLER</a></div>
                 <div class="carousel-item"><a href="#soguk">SOĞUK İÇECEKLER</a></div>
-                <div class="carousel-item"><a href="#kokteyl">KOKTEYL</a></div>
-                <div class="carousel-item"><a href="#atistirmalik">TOST-MENEMEN</a></div>
+                <%--<div class="carousel-item"><a href="#kokteyl">KOKTEYL</a></div>--%>
             </div>
         </div>
         <hr />
@@ -117,121 +144,26 @@
                 <asp:Repeater ID="rp_best" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="MrWaffle" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="MrWaffle" style="width: 100px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
                             </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
         </div>
         <hr />
-        <h1 id="waffle" class="section-title">WAFFLE</h1>
+        <h1 id="coldSandwich" class="section-title">Soğuk Sandviç</h1>
         <hr />
         <div class="menu">
             <div class="menu-items">
-                <asp:Repeater ID="rp_waffle" runat="server">
+                <asp:Repeater ID="rp_coldSandwich" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Waffle" style="width: 200px" />
-                            <div class="item-details">
-                                <h3><%# Eval("Name") %></h3>
-                                <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
-        </div>
-        <hr />
-        <h1 id="pasta" class="section-title">PASTALAR</h1>
-        <hr />
-        <div class="menu">
-            <div class="menu-items">
-                <asp:Repeater ID="rp_cake" runat="server">
-                    <ItemTemplate>
-                        <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Pastalar" style="width: 200px" />
-                            <div class="item-details">
-                                <h3><%# Eval("Name") %></h3>
-                                <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
-        </div>
-        <hr />
-        <h1 id="kahve" class="section-title">ESPRESSO KAHVELER</h1>
-        <hr />
-        <div class="menu">
-            <div class="menu-items">
-                <asp:Repeater ID="rp_coffee" runat="server">
-                    <ItemTemplate>
-                        <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Espress Kahveler" style="width: 200px" />
-                            <div class="item-details">
-                                <h3><%# Eval("Name") %></h3>
-                                <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
-        </div>
-        <hr />
-        <h1 id="sicak" class="section-title">SICAK İÇECEKLER</h1>
-        <hr />
-        <div class="menu">
-            <div class="menu-items">
-                <asp:Repeater ID="rp_hot" runat="server">
-                    <ItemTemplate>
-                        <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Sıcak İçecekler" style="width: 200px" />
-                            <div class="item-details">
-                                <h3><%# Eval("Name") %></h3>
-                                <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
-        </div>
-        <hr />
-        <h1 id="soguk" class="section-title">SOĞUK İÇECEKLER</h1>
-        <hr />
-        <div class="menu">
-            <div class="menu-items">
-                <asp:Repeater ID="rp_cold" runat="server">
-                    <ItemTemplate>
-                        <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Soğuk İçecekler" style="width: 200px" />
-                            <div class="item-details">
-                                <h3><%# Eval("Name") %></h3>
-                                <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
-                            </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
-        </div>
-        <hr />
-        <h1 id="kokteyl" class="section-title">KOKTEYL</h1>
-        <hr />
-        <div class="menu">
-            <div class="menu-items">
-                <asp:Repeater ID="rp_coctail" runat="server">
-                    <ItemTemplate>
-                        <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Kokteyl" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Waffle" style="width: 100px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
@@ -250,17 +182,133 @@
                 <asp:Repeater ID="rp_food" runat="server">
                     <ItemTemplate>
                         <div class="menu-item" style="display: flex; align-items: center;">
-                            <img loading="lazy" src='assets/images/product/<%# Eval("image") %>' alt="Tost - Menemen" style="width: 200px" />
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Tost - Menemen" style="width: 100px" />
                             <div class="item-details">
                                 <h3><%# Eval("Name") %></h3>
                                 <p><%#Eval("Description") %></p>
-                                <p class="price"><%# Eval("Price") %>₺</p>
                             </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
         </div>
+        <h1 id="waffle" class="section-title">WAFFLE</h1>
+        <hr />
+        <div class="menu">
+            <div class="menu-items">
+                <asp:Repeater ID="rp_waffle" runat="server">
+                    <ItemTemplate>
+                        <div class="menu-item" style="display: flex; align-items: center;">
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Waffle" style="width: 100px" />
+                            <div class="item-details">
+                                <h3><%# Eval("Name") %></h3>
+                                <p><%#Eval("Description") %></p>
+                            </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <hr />
+        <h1 id="pasta" class="section-title">Tatlılar(El Yapımı)</h1>
+        <hr />
+        <div class="menu">
+            <div class="menu-items">
+                <asp:Repeater ID="rp_cake" runat="server">
+                    <ItemTemplate>
+                        <div class="menu-item" style="display: flex; align-items: center;">
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Pastalar" style="width: 100px" />
+                            <div class="item-details">
+                                <h3><%# Eval("Name") %></h3>
+                                <p><%#Eval("Description") %></p>
+                            </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <hr />
+        <h1 id="lemonade" class="section-title">Limonatalar</h1>
+        <hr />
+        <div class="menu">
+            <div class="menu-items">
+                <asp:Repeater ID="rp_lemonade" runat="server">
+                    <ItemTemplate>
+                        <div class="menu-item" style="display: flex; align-items: center;">
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Espress Kahveler" style="width: 100px" />
+                            <div class="item-details">
+                                <h3><%# Eval("Name") %></h3>
+                                <p><%#Eval("Description") %></p>
+                            </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <hr />
+        <h1 id="redbull" class="section-title">Redbull Kokteyller</h1>
+        <hr />
+        <div class="menu">
+            <div class="menu-items">
+                <asp:Repeater ID="rp_redbull" runat="server">
+                    <ItemTemplate>
+                        <div class="menu-item" style="display: flex; align-items: center;">
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Kokteyl" style="width: 100px" />
+                            <div class="item-details">
+                                <h3><%# Eval("Name") %></h3>
+                                <p><%#Eval("Description") %></p>
+                            </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <hr />
+        <h1 id="sicak" class="section-title">SICAK İÇECEKLER</h1>
+        <hr />
+        <div class="menu">
+            <div class="menu-items">
+                <asp:Repeater ID="rp_hot" runat="server">
+                    <ItemTemplate>
+                        <div class="menu-item" style="display: flex; align-items: center;">
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Sıcak İçecekler" style="width: 100px" />
+                            <div class="item-details">
+                                <h3><%# Eval("Name") %></h3>
+                                <p><%#Eval("Description") %></p>
+                            </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <hr />
+        <h1 id="soguk" class="section-title">SOĞUK İÇECEKLER</h1>
+        <hr />
+        <div class="menu">
+            <div class="menu-items">
+                <asp:Repeater ID="rp_cold" runat="server">
+                    <ItemTemplate>
+                        <div class="menu-item" style="display: flex; align-items: center;">
+                            <img loading="lazy" class=".responsive-img" src='assets/images/product/<%# Eval("image") %>' alt="Soğuk İçecekler" style="width: 100px" />
+                            <div class="item-details">
+                                <h3><%# Eval("Name") %></h3>
+                                <p><%#Eval("Description") %></p>
+                            </div>
+                            <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        <hr />
+
+
         <div class="footer">
             <p><a href="https://appsoly.com/" style="color: white;">Appsoly</a> &copy; 2024</p>
         </div>

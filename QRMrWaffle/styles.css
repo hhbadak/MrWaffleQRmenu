@@ -61,7 +61,7 @@
 /* Responsive stiller */
 @media (max-width: 768px) {
     .navbar .logo {
-        margin-right: 0;
+        margin-left: 40%;
     }
 
     .navbar .carousel-container {
@@ -98,18 +98,19 @@ h2 {
     border-radius: 5px;
     padding: 10px;
     transition: transform 0.3s ease;
+    min-width: 415px;
 }
 
-    .menu-item:hover {
-        transform: translateY(-5px);
-    }
+.menu-item:hover {
+    transform: translateY(-5px);
+}
 
-    .menu-item img {
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        margin-right: 20px;
-    }
+.menu-item img {
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
 
 .item-details {
     display: flex;
@@ -117,23 +118,27 @@ h2 {
     text-align: left;
 }
 
-    .item-details h3 {
-        margin: 0;
-        font-size: 18px;
-        font-family: 'Poppins', sans-serif;
-    }
+.item-details h3 {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
 
-    .item-details p {
-        margin: 5px 0;
-    }
+.item-details p {
+    margin: 5px 0;
+    font-size: 10px;
+}
 
 .price {
     color: #888;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-left: auto;
 }
+
 
 /* Başlıklar için scroll-margin-top ayarı */
 .section-title {
-    scroll-margin-top: 90px; /* Navbar yüksekliğine bağlı olarak ayarlayın */
+    scroll-margin-top: 130px; /* Navbar yüksekliğine bağlı olarak ayarlayın */
 }

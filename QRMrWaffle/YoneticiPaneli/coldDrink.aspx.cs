@@ -13,21 +13,7 @@ namespace QRMrWaffle.YoneticiPaneli
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             VeriDoldur();
-        }
-
-        protected void lv_listProduct_ItemCommand(object sender, ListViewCommandEventArgs e)
-        {
-
-            if (e.CommandName == "delete")
-            {
-                int id = Convert.ToInt32(e.CommandArgument);
-                dm.DeleteProduct(id);
-                pnl_basarisiz.Visible = false;
-                pnl_basarili.Visible = true;
-                lbl_mesaj.Text = "Silme İşlemi Başarılı";
-            }
         }
         public void VeriDoldur()
         {
@@ -36,5 +22,14 @@ namespace QRMrWaffle.YoneticiPaneli
             lv_listProduct.DataBind();
         }
 
+        protected void lv_listProduct_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if (e.CommandName == "delete")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                dm.DeleteProduct(id);
+                Response.Redirect("~/YoneticiPaneli/coldDrink.aspx");
+            }
+        }
     }
 }
