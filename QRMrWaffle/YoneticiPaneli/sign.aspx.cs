@@ -13,7 +13,14 @@ namespace QRMrWaffle.YoneticiPaneli
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                string hiddenFieldValue = HiddenField1.Value;
+                if (hiddenFieldValue == "true")
+                {
+                    lbtn_login_Click(sender, e);
+                }
+            }
         }
 
         protected void lbtn_login_Click(object sender, EventArgs e)

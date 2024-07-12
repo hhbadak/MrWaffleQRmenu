@@ -21,6 +21,9 @@
 </head>
 <body>
     <div class="card-container">
+        <div class="logo">
+            <img src="assets/images/websiteico.jpg" alt="Logo" />
+        </div>
         <div class="card-link">
             <a href="menu.aspx#cok-satanlar">
                 <div class="card" style="background-image: url('../assets/images/product/pasta.jpg');">

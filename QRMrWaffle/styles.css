@@ -124,10 +124,13 @@ h2 {
     font-family: 'Poppins', sans-serif;
 }
 
-.item-details p {
-    margin: 5px 0;
-    font-size: 10px;
-}
+    .item-details p {
+        margin: 5px 0;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-weight:bold;
+        color:#555;
+    }
 
 .price {
     color: #888;

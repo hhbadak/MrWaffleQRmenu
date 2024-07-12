@@ -10,6 +10,6 @@ namespace DataAccessLayer
     {
         //public static string ConStr = @"Data Source=.\SQLEXPRESS; Initial Catalog=MrWaffleMenu;Integrated Security=True";
 
-        public static string ConStr = @"Data Source=mssql02.trwww.com;Network Library=DBMSSOCN;Initial Catalog=hhbadakd_MrWaffle;User ID=MrWaffle;Password=8Ib04y9#z";
+        public static string ConStr = @"Data Source=mssql03.trwww.com;Network Library=DBMSSOCN;Initial Catalog=dpazaric_MrWaffle;User ID=hhbadakMrWaffle;Password=Tyc7262w@";
     }
 }

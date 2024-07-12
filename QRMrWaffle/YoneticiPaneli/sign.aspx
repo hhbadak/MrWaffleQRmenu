@@ -21,6 +21,16 @@
 
     <link href="../YoneticiPaneli/css/app.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+      <script type="text/javascript">
+        function handleEnterKey(event) {
+            if (event.keyCode === 13) {
+                document.getElementById('<%= HiddenField1.ClientID %>').value = 'true';
+                __doPostBack('<%= lbtn_login.UniqueID %>', '');
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
    <form id="form1" runat="server">
@@ -46,10 +56,11 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Şifrenizi Giriniz</label>
-                                            <asp:TextBox ID="tb_password" runat="server" CssClass="form-control form-control-lg" placeholder="Şifreniz" TextMode="Password"></asp:TextBox>
+                                            <asp:TextBox ID="tb_password" runat="server" CssClass="form-control form-control-lg" placeholder="Şifreniz" TextMode="Password" onkeydown="handleEnterKey(event)"></asp:TextBox>
                                         </div>
                                         <div class="text-center mt-3">
                                             <asp:LinkButton ID="lbtn_login" runat="server" Text="Giriş Yap" CssClass="btn btn-lg btn-primary" OnClick="lbtn_login_Click"> </asp:LinkButton>
+                                            <asp:HiddenField ID="HiddenField1" runat="server" />
                                         </div>
                                     </div>
                                 </div>
