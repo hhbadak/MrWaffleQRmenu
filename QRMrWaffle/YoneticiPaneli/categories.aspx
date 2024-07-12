@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/YoneticiPaneli/index.Master" AutoEventWireup="true" CodeBehind="categories.aspx.cs" Inherits="QRMrWaffle.YoneticiPaneli.categories" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <div class="mt-5">
         <asp:Panel ID="pnl_basarili" runat="server" CssClass="basarili" Visible="false">
             Ürün Ekleme Başarılı
@@ -10,19 +11,18 @@
         <asp:Panel ID="pnl_basarisiz" runat="server" CssClass="basarisiz" Visible="false">
             <asp:Label ID="lbl_mesaj" runat="server"></asp:Label>
         </asp:Panel>
-
-        <asp:ListView ID="lv_listProduct" runat="server" DataKeyNames="ID" OnItemCommand="lv_listProduct_ItemCommand">
+        <div class="mb-3">
+            <a href="../YoneticiPaneli/createCategory.aspx" style="width:100%; padding:1%;" class="btn btn-primary btn-lg"><i class="align-middle me-2" data-feather="plus"></i> &nbsp KATEGORİ EKLE</a>
+        </div>
+        <asp:ListView ID="lv_listCategory" runat="server" DataKeyNames="ID" OnItemCommand="lv_listCategory_ItemCommand">
             <LayoutTemplate>
                 <table class="table" cellpadding="0" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Fotoğraf</th>
                             <th>ID</th>
                             <th>Adı</th>
-                            <th>Açıklaması</th>
-                            <th>Fiyatı</th>
-                            <th>Kategorisi</th>
-                            <th>Seçenek</th>
+                            <th>Aktif Mi?</th>
+                            <th>Seçenekler</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,15 +32,11 @@
             </LayoutTemplate>
             <ItemTemplate>
                 <tr>
-                    <td>
-                        <img src="../assets/images/product/<%# Eval("Image") %>" width="50" /></td>
                     <td><%# Eval("ID") %></td>
                     <td><%# Eval("Name") %></td>
-                    <td><%# Eval("Description") %></td>
-                    <td><%# Eval("Price") %></td>
-                    <td><%# Eval("Category") %></td>
+                    <td><%# Eval("Active") %></td>
                     <td>
-                        <a href='../YoneticiPaneli/updateProduct.aspx?mid=<%# Eval("ID") %>' class="duzenle"><i class="align-middle me-2" data-feather="edit"></i></a>
+                        <a href='../YoneticiPaneli/updateCategory.aspx?mid=<%# Eval("ID") %>' class="duzenle"><i class="align-middle me-2" data-feather="edit"></i></a>
                         <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("ID") %>' CommandName="delete"><i class="align-middle me-2" data-feather="trash-2"></i></asp:LinkButton>
                     </td>
                 </tr>

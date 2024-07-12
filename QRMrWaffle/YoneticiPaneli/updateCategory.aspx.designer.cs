@@ -11,7 +11,7 @@ namespace QRMrWaffle.YoneticiPaneli
 {
 
 
-    public partial class categories
+    public partial class updateCategory
     {
 
         /// <summary>
@@ -42,12 +42,30 @@ namespace QRMrWaffle.YoneticiPaneli
         protected global::System.Web.UI.WebControls.Label lbl_mesaj;
 
         /// <summary>
-        /// lv_listCategory control.
+        /// tb_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_listCategory;
+        protected global::System.Web.UI.WebControls.TextBox tb_name;
+
+        /// <summary>
+        /// cb_active control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_active;
+
+        /// <summary>
+        /// lbtn_update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_update;
     }
 }

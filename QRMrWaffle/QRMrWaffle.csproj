@@ -238,6 +238,7 @@
     <Content Include="YoneticiPaneli\coffee.aspx" />
     <Content Include="YoneticiPaneli\coldDrink.aspx" />
     <Content Include="YoneticiPaneli\coldSandwich.aspx" />
+    <Content Include="YoneticiPaneli\createCategory.aspx" />
     <Content Include="YoneticiPaneli\css\app.css" />
     <Content Include="YoneticiPaneli\food.aspx" />
     <Content Include="YoneticiPaneli\hotDrink.aspx" />
@@ -272,6 +273,7 @@
     <Content Include="YoneticiPaneli\lemonade.aspx" />
     <Content Include="YoneticiPaneli\productAdd.aspx" />
     <Content Include="YoneticiPaneli\sign.aspx" />
+    <Content Include="YoneticiPaneli\updateCategory.aspx" />
     <Content Include="YoneticiPaneli\updatePopUp.aspx" />
     <Content Include="YoneticiPaneli\updateProduct.aspx" />
     <Content Include="YoneticiPaneli\waffle.aspx" />
@@ -334,6 +336,13 @@
     <Compile Include="YoneticiPaneli\coldSandwich.aspx.designer.cs">
       <DependentUpon>coldSandwich.aspx</DependentUpon>
     </Compile>
+    <Compile Include="YoneticiPaneli\createCategory.aspx.cs">
+      <DependentUpon>createCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\createCategory.aspx.designer.cs">
+      <DependentUpon>createCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="YoneticiPaneli\food.aspx.cs">
       <DependentUpon>food.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -382,6 +391,13 @@
     </Compile>
     <Compile Include="YoneticiPaneli\sign.aspx.designer.cs">
       <DependentUpon>sign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\updateCategory.aspx.cs">
+      <DependentUpon>updateCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\updateCategory.aspx.designer.cs">
+      <DependentUpon>updateCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="YoneticiPaneli\updatePopUp.aspx.cs">
       <DependentUpon>updatePopUp.aspx</DependentUpon>

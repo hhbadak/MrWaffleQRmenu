@@ -24,7 +24,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "SELECT COUNT(*) FROM MrWaffle.Admin WHERE Surname = @sname AND Password = @password";
+                cmd.CommandText = "SELECT COUNT(*) FROM Admin WHERE Surname = @sname AND Password = @password";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@sname", surname);
                 cmd.Parameters.AddWithValue("@password", password);
@@ -33,7 +33,7 @@ namespace DataAccessLayer
 
                 if (sayi > 0)
                 {
-                    cmd.CommandText = "SELECT ID, Name, Surname, Password FROM MrWaffle.Admin  WHERE Surname = @surname AND Password = @password";
+                    cmd.CommandText = "SELECT ID, Name, Surname, Password FROM Admin  WHERE Surname = @surname AND Password = @password";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@surname", surname);
                     cmd.Parameters.AddWithValue("@password", password);
@@ -70,7 +70,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "INSERT INTO MrWaffle.Products(Name, Description, Image, Price, CategoryID, BestSellers) VALUES(@name, @desc, @image, @price, @catid, @bsell)";
+                cmd.CommandText = "INSERT INTO Products(Name, Description, Image, Price, CategoryID, BestSellers) VALUES(@name, @desc, @image, @price, @catid, @bsell)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@name", pro.Name);
                 cmd.Parameters.AddWithValue("@desc", pro.Description);
@@ -91,7 +91,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p JOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.BestSellers = 1";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p JOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.BestSellers = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -120,7 +120,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 8";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 8";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -149,7 +149,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 1";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -178,7 +178,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 9";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 9";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -207,7 +207,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 5";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 5";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -236,7 +236,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 2";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 2";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -265,7 +265,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 3";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 3";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -294,7 +294,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 4";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 4";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -323,7 +323,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 6";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 6";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -352,7 +352,7 @@ namespace DataAccessLayer
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 7";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 7";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -380,7 +380,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "UPDATE MrWaffle.Products SET Name = @name, Description=@desc, Image=@image, Price=@price, CategoryID = @catid, BestSellers = @bsell WHERE ID=@id";
+                cmd.CommandText = "UPDATE Products SET Name = @name, Description=@desc, Image=@image, Price=@price, CategoryID = @catid, BestSellers = @bsell WHERE ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", pro.ID);
                 cmd.Parameters.AddWithValue("@name", pro.Name);
@@ -409,7 +409,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "DELETE MrWaffle.Products WHERE ID = @id";
+                cmd.CommandText = "DELETE Products WHERE ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
@@ -430,7 +430,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, p.CategoryID, c.Name, p.BestSellers FROM MrWaffle.Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.ID = @id";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, p.CategoryID, c.Name, p.BestSellers FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
@@ -468,7 +468,7 @@ namespace DataAccessLayer
             List<Category> category = new List<Category>();
             try
             {
-                cmd.CommandText = "SELECT * FROM MrWaffle.Category";
+                cmd.CommandText = "SELECT * FROM Category";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -487,6 +487,98 @@ namespace DataAccessLayer
             }
             finally { con.Close(); }
         }
+
+        public bool DeleteCategory(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE Category WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public Category GetCategory(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT ID, Name, Active FROM Category WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                Category c = new Category();
+                while (reader.Read())
+                {
+                    c.ID = reader.GetInt32(0);
+                    c.Name = reader.GetString(1);
+                    c.Active = reader.GetBoolean(2);
+                }
+                return c;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool UpdateCategory(Category cat)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Category SET Name = @name, Active = @active WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", cat.ID);
+                cmd.Parameters.AddWithValue("@name", cat.Name);
+                cmd.Parameters.AddWithValue("@active", cat.Active);
+
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool CreateCategory(Category cat)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Category(Name, Active) VALUES(@name, @active)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@name", cat.Name);
+                cmd.Parameters.AddWithValue("@active", cat.Active);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            { return false; }
+            finally { con.Close(); }
+        }
         #endregion
 
         #region PopUp METHOD
@@ -495,7 +587,7 @@ namespace DataAccessLayer
             List<PopUp> products = new List<PopUp>();
             try
             {
-                cmd.CommandText = "SELECT ID, Name, Image, Url FROM MrWaffle.PopUp";
+                cmd.CommandText = "SELECT ID, Name, Image, Url FROM PopUp";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -521,7 +613,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "SELECT ID, Name, Image, Url FROM MrWaffle.PopUp";
+                cmd.CommandText = "SELECT ID, Name, Image, Url FROM PopUp";
                 cmd.Parameters.Clear();
                 con.Open();
 
@@ -550,7 +642,7 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "UPDATE MrWaffle.PopUp SET Name = @name, Image=@image, Url=@url WHERE ID = 1";
+                cmd.CommandText = "UPDATE PopUp SET Name = @name, Image=@image, Url=@url WHERE ID = 1";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@name", pop.Name);
                 cmd.Parameters.AddWithValue("@image", pop.Image);
