@@ -233,6 +233,7 @@
     <Content Include="styles.css" />
     <Content Include="Web.config" />
     <Content Include="YoneticiPaneli\cake.aspx" />
+    <Content Include="YoneticiPaneli\categories.aspx" />
     <Content Include="YoneticiPaneli\coctail.aspx" />
     <Content Include="YoneticiPaneli\coffee.aspx" />
     <Content Include="YoneticiPaneli\coldDrink.aspx" />
@@ -297,6 +298,13 @@
     </Compile>
     <Compile Include="YoneticiPaneli\cake.aspx.designer.cs">
       <DependentUpon>cake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\categories.aspx.cs">
+      <DependentUpon>categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\categories.aspx.designer.cs">
+      <DependentUpon>categories.aspx</DependentUpon>
     </Compile>
     <Compile Include="YoneticiPaneli\coctail.aspx.cs">
       <DependentUpon>coctail.aspx</DependentUpon>

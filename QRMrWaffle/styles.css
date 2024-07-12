@@ -1,4 +1,7 @@
-﻿
+﻿body {
+    
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+}
 .section-title {
     scroll-margin-top: 120px; /* Navbar yüksekliğine bağlı olarak ayarlayın */
 }

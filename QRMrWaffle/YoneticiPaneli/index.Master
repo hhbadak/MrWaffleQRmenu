@@ -87,6 +87,19 @@
 
                     </ul>
 
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-header">Kategori İşlemleri
+                        </li>
+
+                        <li class="sidebar-item active">
+                            <a class="sidebar-link" href="../YoneticiPaneli/categories.aspx">
+                                <span class="align-middle">Kategoriler</span>
+                            </a>
+                        </li>
+
+                        
+                    </ul>
+
                     <div class="sidebar-cta">
                         <div class="sidebar-cta-content">
                             <strong class="d-inline-block mb-2">ÜRÜN EKLEME</strong>
