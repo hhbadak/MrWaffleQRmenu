@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,7 +20,7 @@ namespace QRMrWaffle.YoneticiPaneli
                 Category c = dm.GetCategory(id);
 
                 tb_name.Text = c.Name;
-                cb_active.Checked = c.Active;
+                img_picture.ImageUrl = "~/assets/images/product/" + c.Image;
             }
         }
 
@@ -29,19 +30,33 @@ namespace QRMrWaffle.YoneticiPaneli
 
             Category cat = dm.GetCategory(id);
             cat.Name = tb_name.Text;
-            cat.Active = cb_active.Checked;
-
+            if (fu_picture.HasFile)
+            {
+                FileInfo fi = new FileInfo(fu_picture.FileName);
+                if (fi.Extension == ".jpg" || fi.Extension == ".png")
+                {
+                    string uzanti = fi.Extension;
+                    string isim = Guid.NewGuid().ToString();
+                    cat.Image = isim + uzanti;
+                    fu_picture.SaveAs(Server.MapPath("~/assets/images/product/" + isim + uzanti));
+                }
+                else
+                {
+                    pnl_basarisiz.Visible = true;
+                    pnl_basarili.Visible = false;
+                    lbl_mesaj.Text = "Resim uzantısı sadece .jpg veya .png olmalıdır";
+                }
+            }
             if (dm.UpdateCategory(cat))
             {
                 pnl_basarisiz.Visible = false;
                 pnl_basarili.Visible = true;
-                tb_name.Text = "";
             }
             else
             {
                 pnl_basarisiz.Visible = true;
                 pnl_basarili.Visible = false;
-                lbl_mesaj.Text = "Ürün Ekleme Başarısız";
+                lbl_mesaj.Text = "Kategori Ekleme Başarısız";
             }
         }
     }

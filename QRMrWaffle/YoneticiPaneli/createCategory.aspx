@@ -19,8 +19,10 @@
 
                     <label><b>Kategori Adını Giriniz</b></label>
                     <asp:TextBox ID="tb_name" runat="server" CssClass="form-control" Placeholder="ÜRÜN ADI"></asp:TextBox><br />
-                    <label><b>Kategori Aktif Mi?</b></label>
-                    <asp:CheckBox ID="cb_best" CssClass="form-control" runat="server" />
+                    <label><b>Kategori ID Giriniz</b></label>
+                    <asp:TextBox ID="tb_specialID" runat="server" CssClass="form-control" Placeholder="LÜTFEN BOŞLUK VE TÜRKÇE KARAKTER KULLANMAYINIZ"></asp:TextBox><br />
+                     <label><b>Kategori Resmi</b></label>
+                    <asp:FileUpload ID="fu_picture" runat="server"></asp:FileUpload>
                 </div>
                 <div class="row">
                     <asp:LinkButton ID="lbtn_create" runat="server" Text="EKLE" CssClass="btn btn-primary btn-lg" OnClick="lbtn_create_Click"></asp:LinkButton>

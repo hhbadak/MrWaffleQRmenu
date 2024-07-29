@@ -30,6 +30,12 @@ namespace QRMrWaffle.YoneticiPaneli
                 dm.DeleteCategory(id);
                 Response.Redirect("~/YoneticiPaneli/categories.aspx");
             }
+            if (e.CommandName == "inActive")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                dm.ActiveCategory(id);
+                Response.Redirect("~/YoneticiPaneli/categories.aspx");
+            }
         }
     }
 }

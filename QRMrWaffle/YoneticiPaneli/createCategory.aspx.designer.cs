@@ -51,13 +51,22 @@ namespace QRMrWaffle.YoneticiPaneli
         protected global::System.Web.UI.WebControls.TextBox tb_name;
 
         /// <summary>
-        /// cb_best control.
+        /// tb_specialID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_best;
+        protected global::System.Web.UI.WebControls.TextBox tb_specialID;
+
+        /// <summary>
+        /// fu_picture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fu_picture;
 
         /// <summary>
         /// lbtn_create control.

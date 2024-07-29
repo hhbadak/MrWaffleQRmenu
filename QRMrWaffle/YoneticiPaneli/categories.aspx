@@ -38,6 +38,7 @@
                     <td>
                         <a href='../YoneticiPaneli/updateCategory.aspx?mid=<%# Eval("ID") %>' class="duzenle"><i class="align-middle me-2" data-feather="edit"></i></a>
                         <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("ID") %>' CommandName="delete"><i class="align-middle me-2" data-feather="trash-2"></i></asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_active" runat="server" CssClass="sil" CommandArgument='<%# Eval("ID") %>' CommandName="inActive"><i class="align-middle me-2" data-feather="check"></i></asp:LinkButton>
                     </td>
                 </tr>
             </ItemTemplate>

@@ -18,8 +18,8 @@ namespace QRMrWaffle.YoneticiPaneli
         public void VeriDoldur()
         {
             Product p = new Product();
-            lv_listProduct.DataSource = dm.ProductListHotDrink();
-            lv_listProduct.DataBind();
+            //lv_listProduct.DataSource = dm.ProductListHotDrink();
+            //lv_listProduct.DataBind();
         }
 
         protected void lv_listProduct_ItemCommand(object sender, ListViewCommandEventArgs e)

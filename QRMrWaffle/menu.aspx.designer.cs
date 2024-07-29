@@ -33,6 +33,15 @@ namespace QRMrWaffle
         protected global::System.Web.UI.WebControls.Repeater rp_popUp;
 
         /// <summary>
+        /// rp_categories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_categories;
+
+        /// <summary>
         /// rp_best control.
         /// </summary>
         /// <remarks>
@@ -42,75 +51,12 @@ namespace QRMrWaffle
         protected global::System.Web.UI.WebControls.Repeater rp_best;
 
         /// <summary>
-        /// rp_coldSandwich control.
+        /// rp_menuCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_coldSandwich;
-
-        /// <summary>
-        /// rp_food control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_food;
-
-        /// <summary>
-        /// rp_waffle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_waffle;
-
-        /// <summary>
-        /// rp_cake control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_cake;
-
-        /// <summary>
-        /// rp_lemonade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_lemonade;
-
-        /// <summary>
-        /// rp_redbull control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_redbull;
-
-        /// <summary>
-        /// rp_hot control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_hot;
-
-        /// <summary>
-        /// rp_cold control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_cold;
+        protected global::System.Web.UI.WebControls.Repeater rp_menuCategory;
     }
 }

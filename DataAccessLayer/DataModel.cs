@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -86,12 +87,13 @@ namespace DataAccessLayer
             { return false; }
             finally { con.Close(); }
         }
+
         public List<Product> ProductListBestSellers()
         {
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p JOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.BestSellers = 1";
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p JOIN Category AS c ON c.ID = p.CategoryID WHERE p.BestSellers = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -115,12 +117,17 @@ namespace DataAccessLayer
             finally { con.Close(); }
         }
 
-        public List<Product> ProductListColdSandwich()
+        public List<Product> ProductList()
         {
             List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 8";
+                // SQL sorgusunu oluştur
+                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, p.CategoryID " +
+                                  "FROM Products p " +
+                                  "JOIN Category c ON p.CategoryID = c.ID " +
+                                  "WHERE c.Active = 1";
+
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -132,248 +139,92 @@ namespace DataAccessLayer
                     p.Description = reader.GetString(2);
                     p.Image = reader.GetString(3);
                     p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
+                    p.CategoryID = reader.GetInt32(5);
+                    p.BestSeller = reader.GetBoolean(6);
                     products.Add(p);
                 }
-                return products;
             }
             catch
             {
-                return null;
+                // Hata durumunda boş liste döndür
+                products = new List<Product>();
             }
-            finally { con.Close(); }
+            finally
+            {
+                con.Close();
+            }
+
+            return products;
         }
 
-        public List<Product> ProductListWaffle()
+        public List<Category> GetCategoriesWithProducts()
         {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 1";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+            List<Category> categories = new List<Category>();
 
-        public List<Product> ProductListLemonade()
-        {
-            List<Product> products = new List<Product>();
             try
             {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN MrWaffle.Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 9";
+                // Kategorileri alın
+                cmd.CommandText = "SELECT c.ID, c.Name, c.SpecialID, c.Image " +
+                                  "FROM Category c " +
+                                  "WHERE c.Active = 1";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
 
-        public List<Product> ProductListRedbull()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 5";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+                    Category category = new Category
+                    {
+                        ID = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        SpecialID = reader.GetString(2),
+                        Image = reader.GetString(3),
+                        Products = new List<Product>() // Boş ürün listesi
+                    };
 
-        public List<Product> ProductListHotDrink()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 2";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
+                    categories.Add(category);
                 }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+                reader.Close(); // Verileri okuma tamamlandıktan sonra kapat
 
-        public List<Product> ProductListColdDrink()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 3";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                // Ürünleri alın ve uygun kategorilere ekleyin
+                foreach (var category in categories)
                 {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+                    cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price " +
+                                      "FROM Products p " +
+                                      "WHERE p.CategoryID = @CategoryID";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@CategoryID", category.ID);
+                    SqlDataReader productReader = cmd.ExecuteReader();
 
-        public List<Product> ProductListCake()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 4";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
-        }
+                    while (productReader.Read())
+                    {
+                        Product product = new Product
+                        {
+                            ID = productReader.GetInt32(0),
+                            Name = productReader.GetString(1),
+                            Description = productReader.GetString(2),
+                            Image = productReader.GetString(3),
+                            Price = productReader.GetString(4),
+                            CategoryID = category.ID
+                        };
 
-        public List<Product> ProductListFood()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 6";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
+                        category.Products.Add(product);
+                    }
+                    productReader.Close(); // Ürünleri okuma tamamlandıktan sonra kapat
                 }
-                return products;
             }
-            catch
+            catch (Exception ex)
             {
-                return null;
+                // Hata işleme
+                // Log veya mesaj olarak hata bilgilerini kullanabilirsiniz
+                Console.WriteLine(ex.Message);
             }
-            finally { con.Close(); }
-        }
+            finally
+            {
+                con.Close(); // Bağlantıyı kapat
+            }
 
-        public List<Product> ProductListCoffee()
-        {
-            List<Product> products = new List<Product>();
-            try
-            {
-                cmd.CommandText = "SELECT p.ID, p.Name, p.Description, p.Image, p.Price, c.Name FROM Products AS p\r\nJOIN Category AS c ON c.ID = p.CategoryID WHERE p.CategoryID = 7";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Product p = new Product();
-                    p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Description = reader.GetString(2);
-                    p.Image = reader.GetString(3);
-                    p.Price = reader.GetString(4);
-                    p.Category = reader.GetString(5);
-                    products.Add(p);
-                }
-                return products;
-            }
-            catch
-            {
-                return null;
-            }
-            finally { con.Close(); }
+            return categories;
         }
 
         public bool UpdateProduct(Product pro)
@@ -477,6 +328,35 @@ namespace DataAccessLayer
                     Category c = new Category();
                     c.ID = reader.GetInt32(0);
                     c.Name = reader.GetString(1);
+                    c.Active = reader.GetBoolean(2);
+                    category.Add(c);
+                }
+                return category;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+
+        public List<Category> ListCategoryMenu()
+        {
+            List<Category> category = new List<Category>();
+            try
+            {
+                cmd.CommandText = "SELECT * FROM Category WHERE Active = 1";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Category c = new Category();
+                    c.ID = reader.GetInt32(0);
+                    c.Name = reader.GetString(1);
+                    c.Active = reader.GetBoolean(2);
+                    c.SpecialID = reader.GetString(3);
+                    c.Image = reader.GetString(4);
                     category.Add(c);
                 }
                 return category;
@@ -508,6 +388,39 @@ namespace DataAccessLayer
                 con.Close();
             }
         }
+
+        public bool ActiveCategory(int id)
+        {
+            try
+            {
+                // Mevcut durumu al
+                cmd.CommandText = "SELECT Active FROM Category WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+
+                bool currentStatus = (bool)cmd.ExecuteScalar();
+                bool newStatus = !currentStatus;
+
+                // Yeni durumu güncelle
+                cmd.CommandText = "UPDATE Category SET Active = @newStatus WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@newStatus", newStatus);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
 
         public Category GetCategory(int id)
         {
@@ -542,11 +455,11 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "UPDATE Category SET Name = @name, Active = @active WHERE ID=@id";
+                cmd.CommandText = "UPDATE Category SET Name = @name, Image = @image WHERE ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", cat.ID);
                 cmd.Parameters.AddWithValue("@name", cat.Name);
-                cmd.Parameters.AddWithValue("@active", cat.Active);
+                cmd.Parameters.AddWithValue("@image", cat.Image);
 
                 con.Open();
 
@@ -567,10 +480,11 @@ namespace DataAccessLayer
         {
             try
             {
-                cmd.CommandText = "INSERT INTO Category(Name, Active) VALUES(@name, @active)";
+                cmd.CommandText = "INSERT INTO Category(Name, Active, SpecialID, Image) VALUES(@name, 1, @ID, @image)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@name", cat.Name);
-                cmd.Parameters.AddWithValue("@active", cat.Active);
+                cmd.Parameters.AddWithValue("@ID", cat.SpecialID);
+                cmd.Parameters.AddWithValue("@image", cat.Image);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;

@@ -33,96 +33,19 @@
                 </div>
             </a>
         </div>
-        <div class="card-link">
-            <a href="menu.aspx#cok-satanlar">
-                <div class="card" style="background-image: url('../assets/images/product/coldSandwich.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">SOĞUK SANDVİÇ</h4>
-                    </div>
+        <asp:Repeater ID="rp_categories" runat="server">
+            <ItemTemplate>
+                <div class="card-link">
+                    <a href='<%# "menu.aspx#" + Eval("SpecialID") %>'>
+                        <div class="card" style="background-image: url('../assets/images/product/<%# Eval("Image") %>');">
+                            <div class="card-info">
+                                <h4 style="text-align: center;"><%# Eval("Name") %></h4>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <div class="card-link">
-            <a href="menu.aspx#atistirmalik">
-                <div class="card" style="background-image: url('../assets/images/product/food.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">TOST-MENEMEN</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="card-link">
-            <a href="menu.aspx#waffle">
-                <div class="card" style="background-image: url('../assets/images/product/nutella.png');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">WAFFLE</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="card-link">
-            <a href="menu.aspx#pasta">
-                <div class="card" style="background-image: url('../assets/images/product/sebastian.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">TATLILAR(El Yapımı)</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="card-link">
-            <a href="menu.aspx#pasta">
-                <div class="card" style="background-image: url('../assets/images/product/lemonade.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">LİMONATALAR</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="card-link">
-            <a href="menu.aspx#pasta">
-                <div class="card" style="background-image: url('../assets/images/product/redbull.jpeg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">REDBULL KOKTEYLLER</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <%--        <div class="card-link">
-            <a href="menu.aspx#kahve">
-                <div class="card" style="background-image: url('../assets/images/product/espresso.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">ESPRESSO KAHVELER</h4>
-                    </div>
-                </div>
-            </a>
-        </div>--%>
-        <div class="card-link">
-            <a href="menu.aspx#sicak">
-                <div class="card" style="background-image: url('../assets/images/product/sahlep.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">SICAK İÇECEKLER</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="card-link">
-            <a href="menu.aspx#soguk">
-                <div class="card" style="background-image: url('../assets/images/product/iceMocha.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">SOĞUK İÇECEKLER</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <%-- <div class="card-link">
-            <a href="menu.aspx#kokteyl">
-                <div class="card" style="background-image: url('../assets/images/product/coctail.jpg');">
-                    <div class="card-info">
-                        <h4 style="text-align: center;">KOKTEYL</h4>
-                    </div>
-                </div>
-            </a>
-        </div>--%>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 </body>
 </html>

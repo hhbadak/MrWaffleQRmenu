@@ -124,18 +124,14 @@
             </div>
             <div class="carousel-container">
                 <div class="carousel-item"><a href="#cok-satanlar">ÇOK SATANLAR</a></div>
-                <div class="carousel-item"><a href="#coldSandwich">SOĞUK SANDVİÇ</a></div>
-                <div class="carousel-item"><a href="#atistirmalik">TOST-MENEMEN</a></div>
-                <div class="carousel-item"><a href="#waffle">WAFFLE</a></div>
-                <div class="carousel-item"><a href="#pasta">Tatlılar(El Yapımı)</a></div>
-                <div class="carousel-item"><a href="#lemonade">Limonatalar</a></div>
-                <div class="carousel-item"><a href="#redbull">Redbull Kokteyller</a></div>
-                <%--<div class="carousel-item"><a href="#kahve">ESPRESSO KAHVELER</a></div>--%>
-                <div class="carousel-item"><a href="#sicak">SICAK İÇECEKLER</a></div>
-                <div class="carousel-item"><a href="#soguk">SOĞUK İÇECEKLER</a></div>
-                <%--<div class="carousel-item"><a href="#kokteyl">KOKTEYL</a></div>--%>
+                <asp:Repeater ID="rp_categories" runat="server">
+                    <ItemTemplate>
+                        <div class="carousel-item"><a href='<%# "#" + Eval("SpecialID") %>'><%# Eval("Name") %></a></div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </div>
+
         <hr />
         <h1 id="cok-satanlar" class="section-title">ÇOK SATANLAR</h1>
         <hr />
@@ -156,7 +152,35 @@
             </div>
         </div>
         <hr />
-        <h1 id="coldSandwich" class="section-title">Soğuk Sandviç</h1>
+
+        <asp:Repeater ID="rp_menuCategory" runat="server" OnItemDataBound="rp_menuCategory_ItemDataBound">
+            <ItemTemplate>
+                <h1 id='<%# Eval("SpecialID") %>' class="section-title"><%# Eval("Name") %></h1>
+                <hr />
+                <div class="menu">
+                    <div class="menu-items">
+                        <asp:Repeater ID="rp_menuProduct" runat="server">
+                            <ItemTemplate>
+                                <div class="menu-item" style="display: flex; align-items: center;">
+                                    <img rel="preload" class="responsive-img" src='assets/images/product/<%# Eval("Image") %>' alt="<%# Eval("Name") %>" style="width: 100px" />
+                                    <div class="item-details">
+                                        <h3><%# Eval("Name") %></h3>
+                                        <p><%# Eval("Description") %></p>
+                                    </div>
+                                    <p class="price"><b><%# Eval("Price") %>₺</b></p>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                </div>
+                <hr />
+            </ItemTemplate>
+        </asp:Repeater>
+
+
+
+
+        <%--<h1 id="coldSandwich" class="section-title">Soğuk Sandviç</h1>
         <hr />
         <div class="menu">
             <div class="menu-items">
@@ -306,7 +330,8 @@
                 </asp:Repeater>
             </div>
         </div>
-        <hr />
+        <hr />--%>
+
 
 
         <div class="footer">
