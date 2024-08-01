@@ -33,9 +33,8 @@
                     <label><b>Çok Satılan mı?</b></label>
                     <asp:CheckBox ID="cb_best" CssClass="form-control" runat="server" />
                     <label><b>Ürün Sırası</b></label>
-<asp:DropDownList ID="ddl_order" runat="server" CssClass="form-control">
-    <!-- Sıra numaraları burada listelenecek -->
-</asp:DropDownList><br />
+                    <asp:DropDownList ID="ddl_order" runat="server" CssClass="form-control">
+                    </asp:DropDownList><br />
                 </div>
                 <div class="row">
                     <asp:LinkButton ID="lbtn_update" runat="server" Text="GÜNCELLE" CssClass="btn btn-primary btn-lg" OnClick="lbtn_update_Click"></asp:LinkButton>

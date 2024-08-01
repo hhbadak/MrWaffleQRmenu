@@ -36,55 +36,13 @@
                         <li class="sidebar-header">Ürün Kategorileri
                         </li>
 
-                        <li id="waffle" class="sidebar-item active">
-                            <a class="sidebar-link" href="../YoneticiPaneli/waffle.aspx">
-                                <span class="align-middle">Waffle</span>
-                            </a>
-                        </li>
-
-                        <li id="hotDrink" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/hotDrink.aspx">
-                                <span class="align-middle">Sıcak İçecekler</span>
-                            </a>
-                        </li>
-
-                        <li id="coldDrink" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/coldDrink.aspx">
-                                <span class="align-middle">Soğuk İçecekler</span>
-                            </a>
-                        </li>
-
-                        <li id="cake" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/cake.aspx">
-                                <span class="align-middle">Tatlılar</span>
-                            </a>
-                        </li>
-
-                        <li id="coctail" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/coctail.aspx">
-                                <span class="align-middle">Redbull Kokteyller</span>
-                            </a>
-                        </li>
-
-
-                        <li id="food" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/food.aspx">
-                                <span class="align-middle">Tost-Menemen</span>
-                            </a>
-                        </li>
-
-                        <li id="coldSandwich" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/coldSandwich.aspx">
-                                <span class="align-middle">Soğuk Sandviç</span>
-                            </a>
-                        </li>
-
-                        <li id="lemonade" class="sidebar-item">
-                            <a class="sidebar-link" href="../YoneticiPaneli/lemonade.aspx">
-                                <span class="align-middle">Limonatalar</span>
-                            </a>
-                        </li>
-
+                       <asp:Repeater ID="rptCategories" runat="server">
+                        <ItemTemplate>
+                            <li class="sidebar-item active">
+                                <a class="sidebar-link" href="../YoneticiPaneli/productList.aspx?categoryID=<%# Eval("ID") %>"><span class="align-middle"><%# Eval("Name") %></span></a>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
                     </ul>
 
                     <ul class="sidebar-nav">

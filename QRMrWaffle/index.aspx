@@ -37,7 +37,7 @@
             <ItemTemplate>
                 <div class="card-link">
                     <a href='<%# "menu.aspx#" + Eval("SpecialID") %>'>
-                        <div class="card" style="background-image: url('../assets/images/product/<%# Eval("Image") %>');">
+                        <div class="card" style="background-image: url('<%#"../assets/images/product/" + Eval("Image") %>');">
                             <div class="card-info">
                                 <h4 style="text-align: center;"><%# Eval("Name") %></h4>
                             </div>

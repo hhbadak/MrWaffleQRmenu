@@ -272,6 +272,7 @@
     <Content Include="YoneticiPaneli\js\app.js.LICENSE.txt" />
     <Content Include="YoneticiPaneli\lemonade.aspx" />
     <Content Include="YoneticiPaneli\productAdd.aspx" />
+    <Content Include="YoneticiPaneli\productList.aspx" />
     <Content Include="YoneticiPaneli\sign.aspx" />
     <Content Include="YoneticiPaneli\updateCategory.aspx" />
     <Content Include="YoneticiPaneli\updatePopUp.aspx" />
@@ -384,6 +385,13 @@
     </Compile>
     <Compile Include="YoneticiPaneli\productAdd.aspx.designer.cs">
       <DependentUpon>productAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\productList.aspx.cs">
+      <DependentUpon>productList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\productList.aspx.designer.cs">
+      <DependentUpon>productList.aspx</DependentUpon>
     </Compile>
     <Compile Include="YoneticiPaneli\sign.aspx.cs">
       <DependentUpon>sign.aspx</DependentUpon>

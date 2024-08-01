@@ -10,11 +10,15 @@ namespace QRMrWaffle.YoneticiPaneli
 {
     public partial class index : System.Web.UI.MasterPage
     {
+        DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["yonetici"] != null)
             {
                 Admin a = (Admin)Session["yonetici"];
+
+                rptCategories.DataSource = dm.ListActiveCategories();
+                rptCategories.DataBind();
             }
             else
             {

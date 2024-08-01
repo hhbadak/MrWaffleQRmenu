@@ -33,7 +33,7 @@ namespace QRMrWaffle.YoneticiPaneli
             if (fu_picture.HasFile)
             {
                 FileInfo fi = new FileInfo(fu_picture.FileName);
-                if (fi.Extension == ".jpg" || fi.Extension == ".png")
+                if (fi.Extension == ".jpg" || fi.Extension == ".png" || fi.Extension == ".jpeg")
                 {
                     string uzanti = fi.Extension;
                     string isim = Guid.NewGuid().ToString();
@@ -44,7 +44,7 @@ namespace QRMrWaffle.YoneticiPaneli
                 {
                     pnl_basarisiz.Visible = true;
                     pnl_basarili.Visible = false;
-                    lbl_mesaj.Text = "Resim uzantısı sadece .jpg veya .png olmalıdır";
+                    lbl_mesaj.Text = "Resim uzantısı sadece .jpg ve .jpeg veya .png olmalıdır";
                 }
             }
             if (dm.UpdateCategory(cat))

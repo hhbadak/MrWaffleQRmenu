@@ -66,6 +66,63 @@ namespace DataAccessLayer
         #endregion
 
         #region PRODUCT METHOD
+        public List<Category> ListActiveCategories()
+        {
+            List<Category> categories = new List<Category>();
+            try
+            {
+                cmd.CommandText = "SELECT * FROM Category WHERE Active = 1";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    categories.Add(new Category
+                    {
+                        ID = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Active = reader.GetBoolean(2)
+                    });
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+            return categories;
+        }
+
+        public List<Product> ListProductsByCategory(int categoryID)
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                cmd.CommandText = "SELECT * FROM Products WHERE CategoryID = @CategoryID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@CategoryID", categoryID);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Product p = new Product();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Description = reader.GetString(2);
+                    p.Image = reader.GetString(3);
+                    p.Price = reader.GetString(4);
+                    p.CategoryID = reader.GetInt32(5);
+                    p.BestSeller = reader.GetBoolean(6);
+                    products.Add(p);
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+            return products;
+        }
 
         public bool CreateProduct(Product pro)
         {
