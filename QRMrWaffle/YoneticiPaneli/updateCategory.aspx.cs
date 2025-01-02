@@ -47,6 +47,21 @@ namespace QRMrWaffle.YoneticiPaneli
                     lbl_mesaj.Text = "Resim uzantısı sadece .jpg ve .jpeg veya .png olmalıdır";
                 }
             }
+            else
+            {
+                // GetImage metodu bir Category nesnesi döndürdüğü için önce bu nesneyi alıyoruz
+                Category category = dm.GetImage(id);
+
+                if (category != null) // Null kontrolü
+                {
+                    cat.Image = category.Image; // Category nesnesinden Image özelliğini alıyoruz
+                }
+                else
+                {
+                    cat.Image = "none.png"; // Eğer GetImage null dönerse varsayılan bir değer atıyoruz
+                }
+            }
+
             if (dm.UpdateCategory(cat))
             {
                 pnl_basarisiz.Visible = false;

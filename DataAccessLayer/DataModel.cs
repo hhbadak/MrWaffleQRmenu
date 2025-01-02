@@ -507,6 +507,34 @@ namespace DataAccessLayer
                 con.Close();
             }
         }
+        public Category GetImage(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT ID, Image, Active FROM Category WHERE ID = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                Category c = new Category();
+                while (reader.Read())
+                {
+                    c.ID = reader.GetInt32(0);
+                    c.Image = reader.GetString(1);
+                    c.Active = reader.GetBoolean(2);
+                }
+                return c;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         public bool UpdateCategory(Category cat)
         {

@@ -46,13 +46,14 @@ namespace QRMrWaffle.YoneticiPaneli
             if (fu_picture.HasFile)
             {
                 FileInfo fi = new FileInfo(fu_picture.FileName);
-                if (fi.Extension == ".jpg" || fi.Extension == ".png")
+                if (fi.Extension == ".jpg" || fi.Extension == ".png" || fi.Extension == ".heic")
                 {
                     string uzanti = fi.Extension;
                     string isim = Guid.NewGuid().ToString();
                     pro.Image = isim + uzanti;
                     fu_picture.SaveAs(Server.MapPath("~/assets/images/product/" + isim + uzanti));
                 }
+
                 else
                 {
                     pnl_basarisiz.Visible = true;
